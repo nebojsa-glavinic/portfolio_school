@@ -40,7 +40,7 @@ i{
 p{
     font: {
         size:18px;
-        weight: 100;
+        weight:400;
     }
 }
 h1{
@@ -49,6 +49,7 @@ h1{
 h2{
     font-size: 32px;
     padding:80px 0px 40px 0px;
+    margin:1px 0px;
 }
 h3{
     font-size: 24px;
@@ -56,7 +57,7 @@ h3{
 h4{
     font: {
         size:16px;
-        weight:200;
+        weight:400;
     }
     color: $color4;
 }
@@ -144,7 +145,7 @@ a{
     background: transparent;
     font: {
         size: 16px;
-        weight: 100;
+        weight: 400;
     }
     border: {
         style:none;
@@ -169,27 +170,21 @@ a{
 /*ANIMATION*/
 
 @keyframes  html_animation {
-    0%{color: $color2;}
     50%{color: $html;}
 }
 @keyframes css_animation {
-    0%{color: $color2;}
     50%{color: $css;}
     }
 @keyframes bootstrap_animation {
-    0%{color: $color2;}
     50%{color: $bootstrap;}
 }
 @keyframes sass_animation {
-    0%{color: $color2;}
     50%{color: $sass;}
 }
 @keyframes php_animation {
-    0%{color: $color2;}
     50%{color: $php;}
 }
 @keyframes java_animation {
-    0%{color: $color2;}
     50%{color: $java;}
 }
 
@@ -202,14 +197,14 @@ a{
     95%{color:$php;}
 }
 @keyframes rgb_border-bottom {
-    0%{border-bottom:1px solid $color2;}
+    0%{border-bottom:1px solid $color4;}
     20%{border-bottom:1px solid $html;}
     35%{border-bottom:1px solid $css;}
     50%{border-bottom:1px solid $sass;}
     65%{border-bottom:1px solid $java;}
     80%{border-bottom:1px solid $bootstrap;}
     95%{border-bottom:1px solid $php;}
-    100%{border-bottom:1px solid $color2;}
+    100%{border-bottom:1px solid $color4;}
 }
 
 @keyframes typing_animation {
@@ -260,7 +255,7 @@ header{
         color:$color4;
         &Note {
             position:absolute;
-            bottom:10vh;
+            bottom:4%;
             right:4%;
             h1, h3, p {
                 text-align: left;
@@ -352,17 +347,15 @@ header{
                 animation: {
                     duration: 24s;
                     iteration-count:infinite;
-                    timing-function: linear;
                 }
                 
             }
             p{
                 font-size: 20px;
-                color: $color2;
+                color: $color4;
                 border-bottom: 1px solid $color2;
                 border-radius: 10%;
                 width:120px;
-                padding-bottom:5px;
                 margin: 23px auto;
                 span{
                     font-size: 50px;
@@ -456,14 +449,14 @@ header{
         align-items: center;
         @include a90;
         &Pro{
-            width:30%;
+            width:33%;
             img{
                 display:block;
                 @include a90;
             }
         }
         p{
-            width:65%;
+            width:67%;
             padding: 5px;
             text-align: justify;
             span{
@@ -501,14 +494,14 @@ header{
             position:absolute;
             left:0;
             bottom:350px;
-            width:1px;
-            height:1px;
+            width:0px;
+            height:0px;
             z-index: 2;
             ul li {
                 width:44px;
                 height:44px;
                 background-color: $bg_color;
-                margin-top: 1px;
+                border-top:1px solid $color4;
                 i{
                     font-size: 24px;
                 }
@@ -527,7 +520,7 @@ header{
                     color:$facebookBlue;
                 }
                 .fa-viber{
-                    color:#8f5db7;
+                    color:$viber;
                 }
                 .fa-linkedin-in{
                     color:#0e76a8;
@@ -550,6 +543,7 @@ header{
     height:760px;
     p{
         @include a90;
+        margin: 1px auto;
     }
     #contactHolder {
         position:relative;
@@ -624,7 +618,7 @@ footer{
                 padding:5px;
                 a{
                     font-size: 18px;
-                    font-weight: 100;
+                    font-weight: 400;
                     span{
                         text-transform: uppercase;
                     }
@@ -703,7 +697,6 @@ footer{
             }
             #forma{
                 width:80%;
-                padding: 30px 0px;
                 img{
                     display:none;
                 }
@@ -714,7 +707,6 @@ footer{
                         @include a90;
                         padding:0px;
                         border-radius:0px;
-                        /*background-color: $color4;*/
                         input, textarea, #submit {
                             border:1px solid $color5;
                         }
@@ -742,9 +734,9 @@ footer{
                     flex-direction: row;
                     justify-content: space-around;
                     li{
+                        border-top: none;
                         background-color: transparent;
                         border-radius:50%;
-                        
                         &:hover{
                             width:44px;
                             box-shadow:0px 0px 8px 1px $color6;
