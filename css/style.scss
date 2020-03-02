@@ -17,10 +17,10 @@
     $viber:#8f5db7;
     $youtube:#FF0000;
 
-@font-face{
+/*@font-face{
     font-family: 'Signika', sans-serif;
     src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
-}
+}*/
 *{
     padding:0px;
     margin: 0px;
@@ -40,7 +40,6 @@ i{
 p{
     font: {
         size:18px;
-        weight:400;
     }
 }
 h1{
@@ -57,7 +56,6 @@ h3{
 h4{
     font: {
         size:16px;
-        weight:400;
     }
     color: $color4;
 }
@@ -145,7 +143,6 @@ a{
     background: transparent;
     font: {
         size: 16px;
-        weight: 400;
     }
     border: {
         style:none;
@@ -618,7 +615,6 @@ footer{
                 padding:5px;
                 a{
                     font-size: 18px;
-                    font-weight: 400;
                     span{
                         text-transform: uppercase;
                     }

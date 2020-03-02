@@ -1,8 +1,7 @@
-@font-face {
-  font-family: 'Signika', sans-serif;
-  src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
-}
-
+/*@font-face{
+    font-family: 'Signika', sans-serif;
+    src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
+}*/
 * {
   padding: 0px;
   margin: 0px;
@@ -22,7 +21,6 @@ i {
 
 p {
   font-size: 18px;
-  font-weight: 400;
 }
 
 h1 {
@@ -41,7 +39,6 @@ h3 {
 
 h4 {
   font-size: 16px;
-  font-weight: 400;
   color: #ffffff;
 }
 
@@ -614,7 +611,6 @@ header #welcomeNote h1 {
   padding: 10px;
   background: transparent;
   font-size: 16px;
-  font-weight: 400;
   border-style: none;
   border-radius: 5px;
 }
@@ -632,7 +628,6 @@ header #welcomeNote h1 {
   padding: 10px;
   background: transparent;
   font-size: 16px;
-  font-weight: 400;
   border-style: none;
   border-radius: 5px;
 }
@@ -675,7 +670,6 @@ footer #footerLinks ul li {
 
 footer #footerLinks ul li a {
   font-size: 18px;
-  font-weight: 400;
 }
 
 footer #footerLinks ul li a span {
