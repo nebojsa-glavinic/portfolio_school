@@ -1,0 +1,836 @@
+    
+    $color2:#c0c0c0;
+    $color3:#252525;
+    $color4:#ffffff;
+    $color5:#000000;
+    $color6:#a8a9ad;
+    $bg_color: rgba(0, 0, 0, 0.95);
+    $twitterBlue:#1da1f2;
+    $facebookBlue:#3b5998;
+    $whatsappGreen:#25d366;
+    $html:#E44D26;
+    $css:#264de4;
+    $bootstrap:#602C50;
+    $sass:#CD6799;
+    $php:#787CB5;
+    $java:#f89820;
+    $viber:#8f5db7;
+    $youtube:#FF0000;
+
+@font-face{
+    font-family: 'Signika', sans-serif;
+    src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
+}
+*{
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family:'Signika', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+    text-align: center;
+}
+
+/*  BASIC  */
+
+i{  
+    color:$color4;
+}
+p{
+    font: {
+        size:18px;
+        weight: 100;
+    }
+}
+h1{
+    font-size: 52px;
+}
+h2{
+    font-size: 32px;
+    padding:80px 0px 40px 0px;
+}
+h3{
+    font-size: 24px;
+}
+h4{
+    font: {
+        size:16px;
+        weight:200;
+    }
+    color: $color4;
+}
+
+ul{
+    list-style-type: none;
+}
+li{
+    padding:10px;
+}
+a{
+    text-decoration: none;
+    color:$color4;
+    font-size:20px;
+}
+
+.flexRow{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.flexCol{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.rgb{
+    text-transform: uppercase;
+    animation: {
+        name:rgb_animation;
+        duration: 21s;
+        iteration-count:infinite;
+    }
+}
+.fa-chevron-circle-up{
+    position:fixed;
+    bottom:4%;
+    right:1%;
+    font-size:30px;
+    color: $color6;
+    border-radius: 50%;
+    z-index:3;
+        &:hover{
+            box-shadow:0px 0px 8px 1px $color6;
+        }
+}
+/* MIXIN */
+
+@mixin flexRow{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@mixin flexCol{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@mixin rgb{
+    animation: {
+        name:rgb_animation;
+        duration: 21s;
+        iteration-count:infinite;
+    }
+}
+@mixin bg_one {
+    background-color: rgba(0, 0, 0, 0.95);
+    
+}
+@mixin shadow_one {
+    box-shadow: 0px 8px 8px $color6;
+}
+@mixin a90{
+    margin:0 auto;
+    width:90%;
+}
+@mixin table-one{
+    width: 100%;
+    outline:none;
+    padding:10px;
+    background: transparent;
+    font: {
+        size: 16px;
+        weight: 100;
+    }
+    border: {
+        style:none;
+        radius:5px;
+        
+    }
+    &:focus {
+        border:$color6;        
+        background-color:$color6;
+        transition:0.6s ease;
+    }
+}
+@mixin table-two{
+    border-bottom:none;
+    color:rgb(169, 169, 169);
+    &:hover{
+        cursor:pointer;
+    }    
+
+}
+
+/*ANIMATION*/
+
+@keyframes  html_animation {
+    0%{color: $color2;}
+    50%{color: $html;}
+}
+@keyframes css_animation {
+    0%{color: $color2;}
+    50%{color: $css;}
+    }
+@keyframes bootstrap_animation {
+    0%{color: $color2;}
+    50%{color: $bootstrap;}
+}
+@keyframes sass_animation {
+    0%{color: $color2;}
+    50%{color: $sass;}
+}
+@keyframes php_animation {
+    0%{color: $color2;}
+    50%{color: $php;}
+}
+@keyframes java_animation {
+    0%{color: $color2;}
+    50%{color: $java;}
+}
+
+@keyframes rgb_animation {
+    20%{color:$html;}
+    35%{color:$css;}
+    50%{color:$sass;}
+    65%{color:$java;}
+    80%{color:$bootstrap;}
+    95%{color:$php;}
+}
+@keyframes rgb_border-bottom {
+    0%{border-bottom:1px solid $color2;}
+    20%{border-bottom:1px solid $html;}
+    35%{border-bottom:1px solid $css;}
+    50%{border-bottom:1px solid $sass;}
+    65%{border-bottom:1px solid $java;}
+    80%{border-bottom:1px solid $bootstrap;}
+    95%{border-bottom:1px solid $php;}
+    100%{border-bottom:1px solid $color2;}
+}
+
+@keyframes typing_animation {
+    from { width: 0% }
+    to { width: 100% }
+}
+
+
+/* HEADER */
+
+header{
+    height:100vh;
+    background: {
+        image: url("../img/slider4.jpg");
+        position: center;
+        repeat: no-repeat;
+        size: cover;
+    }
+    @include shadow_one;
+    #top {
+        background-color: $bg_color;
+        animation: rgb_border-bottom 21s infinite;
+        width:100%;
+        position:fixed;
+        z-index: 5;
+        padding:5px 50px;
+        align-items: center;
+        ul {
+            justify-content: space-between;
+            li {
+                padding:5px 20px;
+                a {
+                    &:hover {
+                        color:$color6;
+                    }     
+                }
+            }
+        }    
+        p, span{
+            font-size:40px;
+            color:$color4; 
+        }
+    }
+    #welcome {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        color:$color4;
+        &Note {
+            position:absolute;
+            bottom:10vh;
+            right:4%;
+            h1, h3, p {
+                text-align: left;
+            }
+            h1{
+                text-transform: uppercase;
+                overflow: hidden;
+                white-space: nowrap;
+                animation: typing_animation 2s steps(20);
+            }
+        }
+    }
+}     
+
+/*PROJECTS*/
+
+#projects {
+    #projectsList {
+        @include a90;
+        .projectsItem {
+            width:20%;
+            a img{
+                width: 100%;
+                border-radius: 5px;
+                opacity:0.8;
+                &:hover{
+                    transform: scale(1.1);
+                    transition: transform 1.2s;
+                    opacity:1;
+                }
+            }
+            h3 {
+                margin: 25px 0px 5px 0px;
+            }
+            p {
+                
+                margin-bottom: 50px;
+            }    
+            
+        }     
+    }
+}
+
+/*SKILLSET*/
+
+#skillset{
+    @include shadow_one;
+    background-color:$color5;
+    opacity:0.95;
+    h2{
+        color: $color4;
+    }
+    &List{
+        position:relative;
+        padding:30px 0px;
+        #skillsetHolder{
+            @include a90;
+            position:relative;
+            justify-content: space-around;
+        }    
+    }
+}
+/*CARD*/
+
+.card{
+    background-color: transparent;
+    width:15%;
+    height:320px;
+    perspective: 1000px;
+    &:hover .card-inner{
+        transform: rotateY(180deg);
+    }
+    .card-inner{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 1.2s;
+        transform-style: preserve-3d;
+        .skill-front, .skill-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+        .skill-front{
+            background-color: rgba(0, 0, 0, 0.95);
+            i, span{
+                font-size: 600%;
+                animation: {
+                    duration: 24s;
+                    iteration-count:infinite;
+                    timing-function: linear;
+                }
+                
+            }
+            p{
+                font-size: 20px;
+                color: $color2;
+                border-bottom: 1px solid $color2;
+                border-radius: 10%;
+                width:120px;
+                padding-bottom:5px;
+                margin: 23px auto;
+                span{
+                    font-size: 50px;
+                }
+                
+            }
+            .fa-html5, .html{
+                animation: {
+                    name: html_animation;
+                    delay: .1s;
+                }    
+            } 
+            .fa-css3-alt, .css{
+                animation: {
+                    name: css_animation;
+                    delay: 12.1s;
+                }    
+            }
+            .fa-bootstrap, .bootstrap{
+                animation: {
+                    name: bootstrap_animation;
+                    delay: .1s;
+                }    
+            }
+            .fa-sass, .sass{
+                animation: {
+                    name: sass_animation;
+                    delay: 12.1s;
+                }    
+            }
+            .fa-php, .php{
+                animation: {
+                    name: php_animation;
+                    delay: .1s;
+                }    
+            }
+            .fa-java, .java{
+                animation: {
+                    name: java_animation;
+                    delay: 12.1s;
+                }    
+            }
+        }
+        .skill-back{
+            background-color: rgba(0, 0, 0, 0.95);
+            transform: rotateY(180deg);
+            color:$color4;
+            border-radius:5px;
+            padding:5px;
+            h4{
+                text-transform: uppercase;
+            }
+            i{
+                font-size: 30px;
+                padding:20px 0px;
+                   
+            }
+            .fa-html5{
+                color:$html;
+            }
+            .fa-css3-alt{
+                color:$css;
+            }
+            .fa-bootstrap{
+                color:$bootstrap;
+            }
+            .fa-sass{
+                color:$sass;
+            }
+            .fa-php{
+                color:$php;
+            }
+            .fa-java{
+                color:$java;
+            }
+            p{
+                font-size: 16px;
+                span{
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+/*ABOUT*/
+
+#about{
+    @include shadow_one;
+    &Me{
+        align-items: center;
+        @include a90;
+        &Pro{
+            width:30%;
+            img{
+                display:block;
+                @include a90;
+            }
+        }
+        p{
+            width:65%;
+            padding: 5px;
+            text-align: justify;
+            span{
+                @include rgb;
+                text-transform: uppercase;
+            }
+        }
+    }
+    #education{
+        background-color: $bg_color;
+        color:$color4;
+        h3, h4{
+            padding:20px 0px;
+        }
+        #eduHolder{
+            @include flexRow;
+            @include a90;
+            .edu{
+                width:45%;
+                padding:20px 0px;
+                img{
+                    width:60px;
+                }
+            }
+        }    
+    }
+}
+
+/*INFORMATION*/
+
+#information{
+    #infoHolder{
+        position:relative;
+        #social{
+            position:absolute;
+            left:0;
+            bottom:350px;
+            width:1px;
+            height:1px;
+            z-index: 2;
+            ul li {
+                width:44px;
+                height:44px;
+                background-color: $bg_color;
+                margin-top: 1px;
+                i{
+                    font-size: 24px;
+                }
+                &:hover{
+                    width:60px;
+                    transition: 1.2s;
+                   
+                }
+                .fa-twitter{
+                    color:$twitterBlue;
+                }
+                .fa-whatsapp{
+                    color:$whatsappGreen;
+                }
+                .fa-facebook-f{
+                    color:$facebookBlue;
+                }
+                .fa-viber{
+                    color:#8f5db7;
+                }
+                .fa-linkedin-in{
+                    color:#0e76a8;
+                }
+                .fa-github{
+                    color:$color2;
+                }
+                .fa-instagram{
+                    color:#bc1888;
+                }
+            }    
+        }
+            
+    }    
+}
+
+/*CONTACT*/
+
+#contact{
+    height:760px;
+    p{
+        @include a90;
+    }
+    #contactHolder {
+        position:relative;
+        i{
+            font-size: 8px;
+            position:absolute;  
+            top:0;
+            right:50%;
+            z-index: 2;
+            animation: rgb_animation 21s infinite;
+        } 
+        #forma{
+            position:relative;
+            margin: 40px auto;
+            width:800px;
+            img{
+                width:820px;
+                height:500px;
+                position:absolute;
+                top:-15px;
+                left:0px;
+            }
+            form{
+                width:810px;
+                position: absolute;
+                z-index: 1;
+                table {
+                    margin: 0px auto;
+                    width: 600px;
+                    padding:30px;
+                    border-spacing: 5px;
+                    ::placeholder{
+                        padding:0px 5px;
+                    }
+                    textarea{
+                        height: 140px;
+                        resize: none;
+                        @include table-one;
+                    }
+                    input {
+                        height: 40px;
+                        @include table-one;
+                    }
+                    #submit{
+                        @include table-two;
+                        &:hover{
+                            color: $color4;
+                        }
+                    }
+                    #name, #email, #message {
+                        color:$color4;
+                        &:focus{
+                            color:$color5;
+                            
+                        }
+
+                    }
+                }
+            }
+        }
+
+    } 
+}
+ 
+/*FOOTER*/
+
+footer{
+    background-color:$bg_color;
+    #footerLinks{   
+        ul{ 
+            li {
+                padding:5px;
+                a{
+                    font-size: 18px;
+                    font-weight: 100;
+                    span{
+                        text-transform: uppercase;
+                    }
+                }
+                :hover{
+                    color:$color6;
+                }
+            }
+        } 
+    }           
+    p{
+        color:$color4;
+        padding:30px 0px 10px 0px;
+        animation:rgb_animation 21s infinite;
+    }   
+}
+
+/*RESPONSIVE*/
+
+@media screen and (max-width:1280px){
+    #projects{
+        #projectsList{
+            justify-content: space-around;
+            .projectsItem{
+                width:43%;
+            }    
+        }
+    }
+    #skillsetList{
+        .card {
+            width:32%;
+        }    
+    }
+    
+}
+@media screen and (max-width:920px){
+    header{
+        #top{
+            flex-direction: column;
+            padding:2px;
+            #logo{
+                p, span{
+                    font-size: 32px;
+                }
+            }   
+            nav{
+                width:100%;
+                ul {
+                    justify-content: space-around;
+                    li{
+                        padding:5px 10px;
+                    }
+                }
+            }    
+        }
+    }
+    #aboutMe{
+        flex-direction: column;
+        padding-bottom: 20px;
+        &Pro{
+            width:50%;
+            border-bottom: 1px solid $color5;
+        }
+        p{
+            width:100%;
+            padding-top:20px;
+            text-align: center;
+        }
+    }
+    #contact{
+        height:auto;
+        #contactHolder{
+            @include a90;
+            .fa-circle{
+                display:none;
+            }
+            #forma{
+                width:80%;
+                padding: 30px 0px;
+                img{
+                    display:none;
+                }
+                form{
+                    width:100%;
+                    position:relative;
+                    table{
+                        @include a90;
+                        padding:0px;
+                        border-radius:0px;
+                        /*background-color: $color4;*/
+                        input, textarea, #submit {
+                            border:1px solid $color5;
+                        }
+                        #name, #email, #message{
+                            color:$color5;
+                        }
+                        #submit:hover{
+                            background-color: $bg_color;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+    #information{
+        background-color: $bg_color;
+        height:80px;
+        #infoHolder{
+            #social{
+                top:40px;
+                width:100%;
+                ul{
+                    display: inline-flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    li{
+                        background-color: transparent;
+                        border-radius:50%;
+                        
+                        &:hover{
+                            width:44px;
+                            box-shadow:0px 0px 8px 1px $color6;
+                        }
+                    }
+                    
+                }
+            
+            }
+
+        }    
+    }
+}
+@media screen and (max-width:780px){
+    h1{
+        font-size: 42px;
+    }
+    
+    #projects #projectsList .projectsItem{
+        width:80%;
+    }
+    #skillsetList{
+        #skillsetHolder{
+            justify-content: space-around;
+            .card {
+                width:45%;
+            }
+        }    
+    }
+    
+}
+@media screen and (max-width:480px){
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 28px;
+    }
+    .fa-chevron-circle-up{
+        font-size: 20px;
+    }
+    header #top #logo{
+        p, span{
+        font-size: 30px;
+        }
+    }
+    
+    a, p, input, textarea{
+        font-size: 16px;
+    }
+    #projects{
+        #projectsList{
+            .projectsItem{
+                width:87%;
+            } 
+        }    
+    }
+    #skillset{ 
+        #skillsetList{ 
+            #skillsetHolder{ 
+                .card{
+                    .skill-front{
+                        i{
+                            font-size: 100px;
+                        }
+                    }
+                    .skill-back{
+                        i{
+                            font-size: 26px;
+                            padding:6px 0px;
+                        }
+                        p{
+                            font-size:14px;
+                        }
+                    }
+                }
+            }
+        }                        
+        
+    }
+    #contact{
+        #contactHolder{
+            #forma{
+                width:100%;
+            }
+        }
+    }    
+}
+
