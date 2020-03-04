@@ -8,9 +8,7 @@
     <meta name="description" content="My name is Nebojša Glavinić and welcome to my Portfolio, here you can find my Skillset and browse my Projects. If You feel I'm a good pick, Contact Me!">
     <meta name="author" content="Nebojša Glavinić">
     <link href="img/favicon.ico" rel="shortcut icon" type="icon/ico">
-    <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <!--<script src="https://kit.fontawesome.com/4698ed6d6f.js" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"/>
     <link href="css/style.min.css" rel="stylesheet" type="text/css">
     <title>Nebojša Glavinić | Web Design</title>
 </head>
@@ -28,6 +26,21 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+            <div id="hiddenNav">
+                <input type="checkbox" id="fakeNav" name="fakeNav"/>
+                
+                <div id="showNav">
+                    <ul >
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skillset">Skillset</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <label for="fakeNav">
+                    <i class="fas fa-bars"></i>
+                </label>
+            </div>
         </div>
         <div id="welcome">
             <div id="welcomeNote" class="flexCol">
@@ -42,22 +55,22 @@
             <h2>&lt Projects /&gt</h2>
             <div id="projectsList" class="flexRow">
                 <div class="projectsItem">
-                    <a href="https://skolasportalavovi.000webhostapp.com/" target="_blank"><img src="img/projects/football480p.jpg" alt="football school project"></a>
+                    <a href="https://skolasportalavovi.000webhostapp.com/" target="_blank"><img src="img/projects/football480p.jpg" alt="football project"/></a>
                     <h3>Football Project</h3>
                     <p>(HTML5, CSS3) <br> (static)</p>
                 </div>
                 <div class="projectsItem">
-                    <a href="https://skolasportalavovi.000webhostapp.com/" target="_blank"><img src="img/projects/basketball480p.jpg" alt="basketball school project"></a>
+                    <a href="https://skolasportalavovi.000webhostapp.com/" target="_blank"><img src="img/projects/basketball480p.jpg" alt="basketball project"/></a>
                     <h3>Basketball Project</h3>
                     <p>(HTML5, CSS3) <br> (static)</p>
                 </div>
                 <div class="projectsItem">
-                    <a href="https://skolasportalavovi.000webhostapp.com/" target="_blank"><img src="img/projects/volleyball480p.jpg" alt="volleyball school project"></a>
+                    <a href="https://skolasportalavovi.000webhostapp.com/" target="_blank"><img src="img/projects/volleyball480p.jpg" alt="volleyball project"/></a>
                     <h3>Volleyball Project</h3>
                     <p>(HTML5, CSS3) <br> (static)</p>
                 </div>
                 <div class="projectsItem">
-                    <a href="https://skolasportalavovi.000webhostapp.com/" target="_blank"><img src="img/projects/tennis480p.jpg" alt="tennis school project"></a>
+                    <a href="https://skolasportalavovi.000webhostapp.com/" target="_blank"><img src="img/projects/tennis480p.jpg" alt="tennis project"/></a>
                     <h3>Tennis Project</h3>
                     <p>(HTML5, CSS3) <br> (static)</p>
                 </div>
@@ -153,20 +166,20 @@
             <h2>&lt About /&gt</h2>
             <div id="aboutMe" class="flexRow">
                 <div id="aboutMePro" >
-                    <img src="img/profil2.png" alt="Nebojša Glavinić profile picture">
+                    <img src="img/profil2.png" alt="Nebojša Glavinić profile picture"/>
                 </div>
                 <p>My name is Nebojša Glavinić. I'm web developer that's currently studying at <span>ict</span> school and constantly improving his skills so my overview will always  be updated. So far I've only had a few projects. I'm skilled in <span>html</span>, <span>css</span>, <span>bootstrap</span> and <span>sass</span>. I work with passion and I'm always trying to make a friendly relationship with my clients because that way we can all work more efficiently and make faster and flawless results! If you're interested, feel free to contact me.</p>
             </div>
             <div id="education">
                 <h3>Education</h3>
-                <div id="eduHolder">
+                <div id="eduHolder" class="flexRow">
                     <div class="edu">
-                        <img src="img/union.png" alt="University Union Nikola Tesla logo">
+                        <img src="img/union.png" alt="University Union Nikola Tesla logo"/>
                         <h4>University Union Nikola Tesla</h4>
                         <p>2005 - 2010</p>
                     </div>
                     <div class="edu">
-                        <img src="img/ict.png" alt="ICT College of Applied Studies logo">
+                        <img src="img/ict.png" alt="ICT College of Applied Studies logo"/>
                         <h4>ICT College of Applied Studies</h4>
                         <p>2019</p>
                     </div>
@@ -179,18 +192,18 @@
             <div id="contactHolder">
                 <i class="fas fa-circle"></i>
                 <div id="forma">
-                    <img src="img/acer3.png" alt="acer laptop">
-                    <form id="form" action="#" method="post" name="contactform">
+                    <img src="img/acer4.png" alt="acer laptop"/>
+                    <form id="form" action="#" method="GET" name="contactform">
                         <table>
                             <tbody>
                                 <tr>
-                                    <td><input type="text" id="name" name="name" placeholder="Name..." required/></td>      
+                                    <td><input type="text" id="name" name="name" placeholder="Name..." required spellcheck="false"/></td>      
                                 </tr>
                                 <tr>
-                                    <td><input type="email" id="email" name="email" placeholder="E-mail..." required/></td>
+                                    <td><input type="email" id="email" name="email" placeholder="E-mail..." required spellcheck="false"/></td>
                                 </tr>
                                 <tr>
-                                    <td><textarea maxlength="200" name="message" id="message" placeholder="Message..." required></textarea></td>
+                                    <td><textarea maxlength="200" name="message" id="message" placeholder="Message..." required spellcheck="false"></textarea></td>
                                 </tr>
                                 <tr>
                                     <td><input type="submit" id="submit" name="submit" value="Send"/></td>
@@ -203,8 +216,8 @@
             <a href="#welcome"><i class="fas fa-chevron-circle-up"></i></a>
         </section>
         <section id="information">
-            <div id="infoHolder">
-                <div id="social" class="info flexCol">
+            <div id="infoHolder" class="flexRow">
+                <div id="social" class="flexCol">
                     <ul>
                         <li class="twitter"><a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
                         <li class="whatsapp"><a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a></li>

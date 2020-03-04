@@ -1,7 +1,8 @@
-/*@font-face{
-    font-family: 'Signika', sans-serif;
-    src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
-}*/
+@font-face {
+  font-family: 'Signika', sans-serif;
+  src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -11,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 40px;
   text-align: center;
 }
 
@@ -29,8 +31,7 @@ h1 {
 
 h2 {
   font-size: 32px;
-  padding: 80px 0px 40px 0px;
-  margin: 1px 0px;
+  padding: 40px 0px 40px 0px;
 }
 
 h3 {
@@ -77,21 +78,14 @@ a {
   animation-iteration-count: infinite;
 }
 
-.fa-chevron-circle-up {
-  position: fixed;
-  bottom: 1%;
-  right: 1%;
-  font-size: 30px;
-  color: #a8a9ad;
-  border-radius: 50%;
-  z-index: 3;
-}
-
-.fa-chevron-circle-up:hover {
-  box-shadow: 0px 0px 8px 1px #a8a9ad;
-}
-
 /* MIXIN */
+/*@mixin flex($direction, $justify, $wrap, $align){
+    display:flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    flex-wrap:$wrap;
+    align-items: $align;
+}*/
 /*ANIMATION*/
 @keyframes html_animation {
   50% {
@@ -134,7 +128,7 @@ a {
     color: #E44D26;
   }
   35% {
-    color: #264de4;
+    color: #1da1f2;
   }
   50% {
     color: #CD6799;
@@ -158,7 +152,7 @@ a {
     border-bottom: 1px solid #E44D26;
   }
   35% {
-    border-bottom: 1px solid #264de4;
+    border-bottom: 1px solid #1da1f2;
   }
   50% {
     border-bottom: 1px solid #CD6799;
@@ -186,9 +180,20 @@ a {
   }
 }
 
+@keyframes arrow_animation {
+  from {
+    bottom: 1%;
+  }
+  to {
+    bottom: 1.2%;
+  }
+}
+
 /* HEADER */
 header {
   height: 100vh;
+  z-index: 5;
+  position: relative;
   background-image: url("../img/slider4.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -201,26 +206,76 @@ header #top {
   animation: rgb_border-bottom 21s infinite;
   width: 100%;
   position: fixed;
-  z-index: 5;
-  padding: 5px 50px;
+  z-index: 6;
+  padding: 5px 25px;
   align-items: center;
 }
 
-header #top ul {
+header #top nav ul {
   justify-content: space-between;
 }
 
-header #top ul li {
-  padding: 5px 20px;
+header #top nav ul li {
+  padding: 0px 20px;
 }
 
-header #top ul li a:hover {
+header #top nav ul li a:hover {
   color: #a8a9ad;
 }
 
 header #top p, header #top span {
-  font-size: 40px;
+  font-weight: 100;
   color: #ffffff;
+  font-size: 40px;
+}
+
+header #top p span, header #top span span {
+  font-weight: 800;
+}
+
+header #top #hiddenNav {
+  display: none;
+}
+
+header #top #hiddenNav i {
+  font-size: 40px;
+  animation-name: rgb_animation;
+  animation-duration: 21s;
+  animation-iteration-count: infinite;
+}
+
+header #top #hiddenNav #showNav {
+  position: absolute;
+  right: 0px;
+  top: 50px;
+  width: 100%;
+  display: none;
+}
+
+header #top #hiddenNav #showNav ul {
+  background-color: #000000;
+  transition: 0.6s ease;
+}
+
+header #top #hiddenNav #showNav ul li a:hover {
+  color: #a8a9ad;
+}
+
+header #top #hiddenNav #fakeNav {
+  display: none;
+}
+
+header #top #hiddenNav #fakeNav:checked ~ #showNav {
+  display: block;
+}
+
+header #top #hiddenNav #fakeNav:checked ~ label i {
+  transform: rotateZ(90deg);
+  transition: 0.6s ease-in-out;
+}
+
+header #top #hiddenNav label {
+  cursor: pointer;
 }
 
 header #welcome {
@@ -254,7 +309,7 @@ header #welcomeNote h1 {
 }
 
 #projects #projectsList .projectsItem {
-  width: 20%;
+  width: 23%;
 }
 
 #projects #projectsList .projectsItem a img {
@@ -473,10 +528,6 @@ header #welcomeNote h1 {
 }
 
 #about #education #eduHolder {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
   margin: 0 auto;
   width: 90%;
 }
@@ -493,6 +544,7 @@ header #welcomeNote h1 {
 /*INFORMATION*/
 #information #infoHolder {
   position: relative;
+  justify-content: center;
 }
 
 #information #infoHolder #social {
@@ -557,6 +609,7 @@ header #welcomeNote h1 {
   margin: 0 auto;
   width: 90%;
   margin: 1px auto;
+  padding-bottom: 20px;
 }
 
 #contact #contactHolder {
@@ -564,12 +617,14 @@ header #welcomeNote h1 {
 }
 
 #contact #contactHolder i {
-  font-size: 8px;
+  font-size: 9px;
   position: absolute;
   top: 0;
   right: 50%;
   z-index: 2;
-  animation: rgb_animation 21s infinite;
+  animation-name: rgb_animation;
+  animation-duration: 21s;
+  animation-iteration-count: infinite;
 }
 
 #contact #contactHolder #forma {
@@ -583,7 +638,7 @@ header #welcomeNote h1 {
   height: 500px;
   position: absolute;
   top: -15px;
-  left: 0px;
+  left: 0;
 }
 
 #contact #contactHolder #forma form {
@@ -611,14 +666,12 @@ header #welcomeNote h1 {
   padding: 10px;
   background: transparent;
   font-size: 16px;
-  border-style: none;
-  border-radius: 5px;
+  border: none;
 }
 
 #contact #contactHolder #forma form table textarea:focus {
-  border: #a8a9ad;
-  background-color: #a8a9ad;
-  transition: 0.6s ease;
+  box-shadow: 0px 0px 8px 1px #ffffff;
+  border: 1px solid #ffffff;
 }
 
 #contact #contactHolder #forma form table input {
@@ -628,35 +681,42 @@ header #welcomeNote h1 {
   padding: 10px;
   background: transparent;
   font-size: 16px;
-  border-style: none;
-  border-radius: 5px;
+  border: none;
 }
 
 #contact #contactHolder #forma form table input:focus {
-  border: #a8a9ad;
-  background-color: #a8a9ad;
-  transition: 0.6s ease;
+  box-shadow: 0px 0px 8px 1px #ffffff;
+  border: 1px solid #ffffff;
 }
 
 #contact #contactHolder #forma form table #submit {
-  border-bottom: none;
   color: darkgray;
 }
 
 #contact #contactHolder #forma form table #submit:hover {
   cursor: pointer;
-}
-
-#contact #contactHolder #forma form table #submit:hover {
-  color: #ffffff;
+  color: #252525;
+  background-color: #ffffff;
 }
 
 #contact #contactHolder #forma form table #name, #contact #contactHolder #forma form table #email, #contact #contactHolder #forma form table #message {
   color: #ffffff;
 }
 
-#contact #contactHolder #forma form table #name:focus, #contact #contactHolder #forma form table #email:focus, #contact #contactHolder #forma form table #message:focus {
-  color: #000000;
+#contact .fa-chevron-circle-up {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  font-size: 40px;
+  color: #a8a9ad;
+  border-radius: 50%;
+  z-index: 3;
+  animation: arrow_animation .4s infinite alternate;
+}
+
+#contact .fa-chevron-circle-up:hover {
+  box-shadow: 0px 0px 8px 1px #a8a9ad;
+  animation-play-state: paused;
 }
 
 /*FOOTER*/
@@ -683,7 +743,9 @@ footer #footerLinks ul li :hover {
 footer p {
   color: #ffffff;
   padding: 30px 0px 10px 0px;
-  animation: rgb_animation 21s infinite;
+  animation-name: rgb_animation;
+  animation-duration: 21s;
+  animation-iteration-count: infinite;
 }
 
 /*RESPONSIVE*/
@@ -700,21 +762,18 @@ footer p {
 }
 
 @media screen and (max-width: 920px) {
-  header #top {
-    flex-direction: column;
-    padding: 2px;
-  }
   header #top #logo p, header #top #logo span {
     font-size: 32px;
   }
   header #top nav {
-    width: 100%;
+    display: none;
   }
-  header #top nav ul {
-    justify-content: space-around;
+  header #top #hiddenNav {
+    display: block;
+    top: 40px;
   }
-  header #top nav ul li {
-    padding: 5px 10px;
+  header #top #hiddenNav i {
+    font-size: 30px;
   }
   #aboutMe {
     flex-direction: column;
@@ -740,7 +799,9 @@ footer p {
     display: none;
   }
   #contact #contactHolder #forma {
-    width: 80%;
+    width: 100%;
+    margin: 0px auto;
+    padding: 40px 0px 60px 0px;
   }
   #contact #contactHolder #forma img {
     display: none;
@@ -750,19 +811,23 @@ footer p {
     position: relative;
   }
   #contact #contactHolder #forma form table {
+    padding: 0px;
     margin: 0 auto;
     width: 90%;
-    padding: 0px;
-    border-radius: 0px;
   }
   #contact #contactHolder #forma form table input, #contact #contactHolder #forma form table textarea, #contact #contactHolder #forma form table #submit {
     border: 1px solid #000000;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.95);
   }
   #contact #contactHolder #forma form table #name, #contact #contactHolder #forma form table #email, #contact #contactHolder #forma form table #message {
     color: #000000;
   }
+  #contact #contactHolder #forma form table #name:focus, #contact #contactHolder #forma form table #email:focus, #contact #contactHolder #forma form table #message:focus {
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.95);
+  }
   #contact #contactHolder #forma form table #submit:hover {
     background-color: rgba(0, 0, 0, 0.95);
+    color: #ffffff;
   }
   #information {
     background-color: rgba(0, 0, 0, 0.95);
@@ -801,22 +866,22 @@ footer p {
   #skillsetList #skillsetHolder .card {
     width: 45%;
   }
+  #skillsetList #skillsetHolder .card .fa-bootstrap, #skillsetList #skillsetHolder .card .bootstrap {
+    animation-delay: 12.1s;
+  }
+  #skillsetList #skillsetHolder .card .fa-sass, #skillsetList #skillsetHolder .card .sass {
+    animation-delay: .1s;
+  }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 520px) {
   h1 {
     font-size: 30px;
   }
   h2 {
     font-size: 28px;
   }
-  .fa-chevron-circle-up {
-    font-size: 20px;
-  }
-  header #top #logo p, header #top #logo span {
-    font-size: 30px;
-  }
-  a, p, input, textarea {
+  p, input, textarea {
     font-size: 16px;
   }
   #projects #projectsList .projectsItem {
@@ -834,5 +899,8 @@ footer p {
   }
   #contact #contactHolder #forma {
     width: 100%;
+  }
+  #contact .fa-chevron-circle-up {
+    font-size: 30px;
   }
 }
