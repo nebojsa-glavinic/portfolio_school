@@ -92,6 +92,7 @@ a:hover {
     flex-wrap:$wrap;
     align-items: $align;
 }*/
+/*ne rade u ms iz nekog razloga gradient1 i gradient2*/
 /*ANIMATION*/
 @keyframes typing_animation {
   from {
@@ -153,7 +154,7 @@ header {
 }
 
 header #top {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #18181e;
   border-bottom: 1px solid #b98d72;
   width: 100%;
   position: fixed;
@@ -200,7 +201,7 @@ header #top #hiddenNav #showNav {
 }
 
 header #top #hiddenNav #showNav ul {
-  background-color: #000000;
+  background-color: #18181e;
   transition: 0.6s ease;
 }
 
@@ -243,7 +244,7 @@ header #welcomeNote h1 {
   overflow: hidden;
   white-space: nowrap;
   animation: typing_animation 2s steps(20);
-  text-shadow: 3px 2px 5px #000000;
+  text-shadow: 3px 2px 5px #18181e;
 }
 
 /*PROJECTS*/
@@ -284,7 +285,7 @@ header #welcomeNote h1 {
 /*SKILLSET*/
 #skillset {
   box-shadow: 0px 8px 8px #a8a9ad;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #18181e;
 }
 
 #skillset h2 {
@@ -427,12 +428,12 @@ header #welcomeNote h1 {
 
 #aboutMe p span {
   text-shadow: 0px 0px 3px #b98d72;
-  color: #000000;
+  color: #18181e;
   text-transform: uppercase;
 }
 
 #about #education {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #18181e;
   color: #ffffff;
 }
 
@@ -486,7 +487,7 @@ header #welcomeNote h1 {
 #information #infoHolder #social ul li {
   width: 44px;
   height: 44px;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #18181e;
   border-top: 1px solid #ffffff;
 }
 
@@ -592,7 +593,7 @@ header #welcomeNote h1 {
 
 #contact #contactHolder #forma form table #submit:hover {
   cursor: pointer;
-  color: #000000;
+  color: #18181e;
   background-color: #b98d72;
   box-shadow: 0px 0px 8px 1px #b98d72;
 }
@@ -619,7 +620,7 @@ header #welcomeNote h1 {
 
 /*FOOTER*/
 footer {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #18181e;
 }
 
 footer #footerLinks ul li {
@@ -701,21 +702,22 @@ footer p {
     width: 90%;
   }
   #contact #contactHolder #forma form table input, #contact #contactHolder #forma form table textarea, #contact #contactHolder #forma form table #submit {
-    border: 1px solid #000000;
-    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.95);
+    border: 1px solid #18181e;
+    box-shadow: 0px 0px 8px 1px #18181e;
+    background-color: #ffffff;
   }
   #contact #contactHolder #forma form table #name, #contact #contactHolder #forma form table #email, #contact #contactHolder #forma form table #message {
-    color: #000000;
+    color: #18181e;
   }
   #contact #contactHolder #forma form table #name:focus, #contact #contactHolder #forma form table #email:focus, #contact #contactHolder #forma form table #message:focus {
-    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.95);
+    box-shadow: 0px 0px 8px 1px #18181e;
   }
   #contact #contactHolder #forma form table #submit:hover {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #18181e;
     color: #b98d72;
   }
   #information {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: #18181e;
     height: 80px;
   }
   #information #infoHolder #social {

@@ -1,9 +1,8 @@
     $color1:#b98d72;
     $color2:#c0c0c0;
     $color4:#ffffff;
-    $color5:#000000;
     $color6:#a8a9ad;
-    $bg_color: rgba(0, 0, 0, 0.95);
+    $bg_color:#18181e;
     $gradient1:linear-gradient(90deg, #b98d72 30%,#d7c797 60%, #dec79b 90%);
     $gradient2:linear-gradient(90deg, #d7c797 20%,#dec79b 40%, #b98d72 60%);
 
@@ -120,11 +119,13 @@ a{
     color:$color1;
     &:hover{
         cursor:pointer;
-        color: $color5;
+        color: $bg_color;
         background-color: $color1;
         @include shadow_two($color1);
     }    
-}
+} 
+/*ne rade u ms iz nekog razloga gradient1 i gradient2*/
+
 @mixin gradient1{
     background: $gradient1;
     -webkit-background-clip:text;
@@ -211,7 +212,7 @@ header{
                 display:none;
                 z-index:-5;
                 ul{
-                    background-color: $color5;
+                    background-color: $bg_color;
                     transition: 0.6s ease;
                 }
             }
@@ -251,7 +252,7 @@ header{
                 overflow: hidden;
                 white-space: nowrap;
                 animation: typing_animation 2s steps(20);
-                text-shadow: 3px 2px 5px $color5;
+                text-shadow: 3px 2px 5px $bg_color;
             }
         }
     }
@@ -412,7 +413,7 @@ header{
             text-align: justify;
             span{
                 text-shadow: 0px 0px 3px $color1;
-                color:$color5;
+                color:$bg_color;
                 text-transform: uppercase;
             }
         }
@@ -651,11 +652,12 @@ footer{
                     table{
                         @include a90;
                         input, textarea, #submit {
-                            border:1px solid $color5;
+                            border:1px solid $bg_color;
                             @include shadow_two($bg_color);
+                            background-color: $color4;
                         }
                         #name, #email, #message{
-                            color:$color5;
+                            color:$bg_color;
                             &:focus{
                                 @include shadow_two($bg_color);
                             }
