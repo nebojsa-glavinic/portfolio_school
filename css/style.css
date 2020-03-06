@@ -501,9 +501,8 @@ header #welcomeNote h1 {
 
 /*CONTACT*/
 #contact {
-  background-image: url(../img/code5.png);
-  background-size: cover;
-  background-attachment: fixed;
+  background: linear-gradient(90deg, #ffffff, #ffffff, #dec79b);
+  padding-bottom: 40px;
 }
 
 #contact p {
@@ -530,7 +529,7 @@ header #welcomeNote h1 {
 
 #contact #contactHolder #forma {
   position: relative;
-  margin: 80px auto;
+  margin: 40px auto;
   width: 840px;
 }
 
@@ -613,8 +612,8 @@ header #welcomeNote h1 {
 }
 
 #contact .fa-chevron-circle-up:hover {
-  box-shadow: 0px 0px 8px 1px #b98d72;
   animation-play-state: paused;
+  opacity: 0.8;
 }
 
 /*FOOTER*/
@@ -673,11 +672,13 @@ footer p {
   #aboutMePro {
     width: 50%;
     border-bottom: 1px solid #b98d72;
+    order: 1;
   }
   #aboutMe p {
     width: 100%;
     padding-top: 20px;
     text-align: center;
+    order: 2;
   }
   #contact #contactHolder .fa-circle {
     display: none;
