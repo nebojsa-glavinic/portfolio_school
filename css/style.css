@@ -333,45 +333,42 @@ header #welcomeNote h1 {
   /*-moz-backface-visibility: hidden;*/
 }
 
+.card .card-inner .skill-front {
+  justify-content: flex-start;
+}
+
 .card .card-inner .skill-front i {
   font-size: 600%;
   color: #b98d72;
 }
 
 .card .card-inner .skill-front .pulse {
-  margin-top: 20px;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   box-shadow: 0px 0px 8px 1px #ffffff;
   border: 1px solid #b98d72;
   animation: pulse_animation 4.2s linear infinite;
-}
-
-.card .card-inner .skill-front .pulse span {
-  font-size: 40px;
   color: #ffffff;
-  line-height: 1.5;
-}
-
-.card .card-inner .skill-front p {
-  font-size: 18px;
-  color: #ffffff;
+  font-size: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 15px auto;
 }
 
-.card .card-inner .skill-front p span {
-  font-size: 50px;
+.card .card-inner .skill-front p {
+  color: #ffffff;
+  padding: 10px 0px;
 }
 
 .card .card-inner .skill-front .oo100 {
-  display: block;
-  margin: 10px auto;
-  font-size: 18px;
   color: #ffffff;
   border-bottom: 3px solid #b98d72;
   width: 100px;
   border-radius: 20%;
+  margin: 5px auto;
+  display: block;
 }
 
 .card .card-inner .skill-back {
@@ -503,7 +500,7 @@ header #welcomeNote h1 {
 
 /*CONTACT*/
 #contact {
-  background: linear-gradient(90deg, #ffffff, #ffffff, #dec79b);
+  background: linear-gradient(135deg, #ffffff, #ffffff, #dec79b);
   padding-bottom: 40px;
 }
 

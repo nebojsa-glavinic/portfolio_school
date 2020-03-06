@@ -333,41 +333,37 @@ header{
             
         }
         .skill-front{
+            justify-content: flex-start;
             i{
                 font-size: 600%;
                 color:$color1;
             }
             .pulse {
-                margin-top:20px;
-                width: 60px;
-                height: 60px;
+                width: 75px;
+                height: 75px;
                 border-radius: 50%;
                 @include shadow_two($color4);
                 border:1px solid $color1;
                 animation:pulse_animation 4.2s linear infinite;
-                span{
-                    font-size: 40px;
-                    color:$color4;
-                    line-height: 1.5;
-                }
+                color:$color4;
+                font-size:34px;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                margin:15px auto;
+        
             }
-            
             p{
-                font-size: 18px;
                 color: $color4;
-                margin: 15px auto;
-                span{
-                    font-size: 50px;
-                }
+                padding:10px 0px;
             }
             .oo100{
-                display: block;
-                margin:10px auto;
-                font-size:18px;
                 color: $color4;
                 border-bottom: 3px solid $color1;
                 width:100px;
                 border-radius:20%;
+                margin:5px auto;
+                display: block;
             }
         }
         .skill-back{
@@ -485,7 +481,7 @@ header{
 /*CONTACT*/
 
 #contact{
-    background: linear-gradient(90deg, $color4, $color4, #dec79b);
+    background: linear-gradient(135deg, $color4, $color4, #dec79b);
     padding-bottom:40px;
     p{
         @include a90;
