@@ -32,6 +32,8 @@ h1 {
 h2 {
   font-size: 32px;
   padding: 40px 0px 40px 0px;
+  margin: 1px;
+  text-shadow: 0px 0px 3px #b98d72;
 }
 
 h3 {
@@ -57,6 +59,10 @@ a {
   font-size: 20px;
 }
 
+a:hover {
+  color: #b98d72;
+}
+
 .flexRow {
   display: flex;
   flex-direction: row;
@@ -73,9 +79,9 @@ a {
 
 .rgb {
   text-transform: uppercase;
-  animation-name: rgb_animation;
-  animation-duration: 21s;
-  animation-iteration-count: infinite;
+  color: #b98d72;
+  animation: rgb_animation 3s linear infinite;
+  background: linear-gradient(90deg, #b98d72 30%, #d7c797 60%, #dec79b 90%);
 }
 
 /* MIXIN */
@@ -87,90 +93,6 @@ a {
     align-items: $align;
 }*/
 /*ANIMATION*/
-@keyframes html_animation {
-  50% {
-    color: #E44D26;
-  }
-}
-
-@keyframes css_animation {
-  50% {
-    color: #264de4;
-  }
-}
-
-@keyframes bootstrap_animation {
-  50% {
-    color: #602C50;
-  }
-}
-
-@keyframes sass_animation {
-  50% {
-    color: #CD6799;
-  }
-}
-
-@keyframes php_animation {
-  50% {
-    color: #787CB5;
-  }
-}
-
-@keyframes java_animation {
-  50% {
-    color: #f89820;
-  }
-}
-
-@keyframes rgb_animation {
-  20% {
-    color: #E44D26;
-  }
-  35% {
-    color: #1da1f2;
-  }
-  50% {
-    color: #CD6799;
-  }
-  65% {
-    color: #f89820;
-  }
-  80% {
-    color: #602C50;
-  }
-  95% {
-    color: #787CB5;
-  }
-}
-
-@keyframes rgb_border-bottom {
-  0% {
-    border-bottom: 1px solid #ffffff;
-  }
-  20% {
-    border-bottom: 1px solid #E44D26;
-  }
-  35% {
-    border-bottom: 1px solid #1da1f2;
-  }
-  50% {
-    border-bottom: 1px solid #CD6799;
-  }
-  65% {
-    border-bottom: 1px solid #f89820;
-  }
-  80% {
-    border-bottom: 1px solid #602C50;
-  }
-  95% {
-    border-bottom: 1px solid #787CB5;
-  }
-  100% {
-    border-bottom: 1px solid #ffffff;
-  }
-}
-
 @keyframes typing_animation {
   from {
     width: 0%;
@@ -189,6 +111,35 @@ a {
   }
 }
 
+@keyframes pulse_animation {
+  10% {
+    box-shadow: 0px 0px 16px 0px #b98d72;
+  }
+  50% {
+    box-shadow: 0px 0px 26px 0px #ffffff;
+  }
+  90% {
+    box-shadow: 0px 0px 16px 0px #b98d72;
+  }
+}
+
+@keyframes rgb_animation {
+  0% {
+    background: linear-gradient(90deg, #b98d72 30%, #d7c797 60%, #dec79b 90%);
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(90deg, #d7c797 20%, #dec79b 40%, #b98d72 60%);
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+  }
+}
+
 /* HEADER */
 header {
   height: 100vh;
@@ -203,7 +154,7 @@ header {
 
 header #top {
   background-color: rgba(0, 0, 0, 0.95);
-  animation: rgb_border-bottom 21s infinite;
+  border-bottom: 1px solid #b98d72;
   width: 100%;
   position: fixed;
   z-index: 6;
@@ -219,18 +170,15 @@ header #top nav ul li {
   padding: 0px 20px;
 }
 
-header #top nav ul li a:hover {
-  color: #a8a9ad;
-}
-
-header #top p, header #top span {
+header #top p {
   font-weight: 100;
   color: #ffffff;
   font-size: 40px;
 }
 
-header #top p span, header #top span span {
+header #top p span {
   font-weight: 800;
+  font-size: 40px;
 }
 
 header #top #hiddenNav {
@@ -239,9 +187,7 @@ header #top #hiddenNav {
 
 header #top #hiddenNav i {
   font-size: 40px;
-  animation-name: rgb_animation;
-  animation-duration: 21s;
-  animation-iteration-count: infinite;
+  color: #b98d72;
 }
 
 header #top #hiddenNav #showNav {
@@ -250,15 +196,12 @@ header #top #hiddenNav #showNav {
   top: 50px;
   width: 100%;
   display: none;
+  z-index: -5;
 }
 
 header #top #hiddenNav #showNav ul {
   background-color: #000000;
   transition: 0.6s ease;
-}
-
-header #top #hiddenNav #showNav ul li a:hover {
-  color: #a8a9ad;
 }
 
 header #top #hiddenNav #fakeNav {
@@ -320,23 +263,27 @@ header #welcomeNote h1 {
 
 #projects #projectsList .projectsItem a img:hover {
   transform: scale(1.1);
-  transition: transform 1.2s;
+  transition: 1.2s;
   opacity: 1;
 }
 
 #projects #projectsList .projectsItem h3 {
   margin: 25px 0px 5px 0px;
+  text-shadow: 0px 0px 2px #b98d72;
 }
 
 #projects #projectsList .projectsItem p {
   margin-bottom: 50px;
 }
 
+#projects #projectsList .projectsItem p span {
+  text-transform: uppercase;
+}
+
 /*SKILLSET*/
 #skillset {
   box-shadow: 0px 8px 8px #a8a9ad;
-  background-color: #000000;
-  opacity: 0.95;
+  background-color: rgba(0, 0, 0, 0.95);
 }
 
 #skillset h2 {
@@ -357,7 +304,6 @@ header #welcomeNote h1 {
 
 /*CARD*/
 .card {
-  background-color: transparent;
   width: 15%;
   height: 320px;
   perspective: 1000px;
@@ -373,6 +319,8 @@ header #welcomeNote h1 {
   height: 100%;
   transition: transform 1.2s;
   transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
+  /**hmm zasto u mozilli radi kontra :) **/
 }
 
 .card .card-inner .skill-front, .card .card-inner .skill-back {
@@ -380,63 +328,51 @@ header #welcomeNote h1 {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  /*-moz-backface-visibility: hidden;*/
 }
 
-.card .card-inner .skill-front {
-  background-color: rgba(0, 0, 0, 0.95);
-}
-
-.card .card-inner .skill-front i, .card .card-inner .skill-front span {
+.card .card-inner .skill-front i {
   font-size: 600%;
-  animation-duration: 24s;
-  animation-iteration-count: infinite;
+  color: #b98d72;
+}
+
+.card .card-inner .skill-front .pulse {
+  margin-top: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px 1px #ffffff;
+  border: 1px solid #b98d72;
+  animation: pulse_animation 4.2s linear infinite;
+}
+
+.card .card-inner .skill-front .pulse span {
+  font-size: 40px;
+  color: #ffffff;
+  line-height: 1.5;
 }
 
 .card .card-inner .skill-front p {
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
-  border-bottom: 1px solid #c0c0c0;
-  border-radius: 10%;
-  width: 120px;
-  margin: 23px auto;
+  margin: 15px auto;
 }
 
 .card .card-inner .skill-front p span {
   font-size: 50px;
 }
 
-.card .card-inner .skill-front .fa-html5, .card .card-inner .skill-front .html {
-  animation-name: html_animation;
-  animation-delay: .1s;
-}
-
-.card .card-inner .skill-front .fa-css3-alt, .card .card-inner .skill-front .css {
-  animation-name: css_animation;
-  animation-delay: 12.1s;
-}
-
-.card .card-inner .skill-front .fa-bootstrap, .card .card-inner .skill-front .bootstrap {
-  animation-name: bootstrap_animation;
-  animation-delay: .1s;
-}
-
-.card .card-inner .skill-front .fa-sass, .card .card-inner .skill-front .sass {
-  animation-name: sass_animation;
-  animation-delay: 12.1s;
-}
-
-.card .card-inner .skill-front .fa-php, .card .card-inner .skill-front .php {
-  animation-name: php_animation;
-  animation-delay: .1s;
-}
-
-.card .card-inner .skill-front .fa-java, .card .card-inner .skill-front .java {
-  animation-name: java_animation;
-  animation-delay: 12.1s;
+.card .card-inner .skill-front .oo100 {
+  display: block;
+  margin: 10px auto;
+  font-size: 18px;
+  color: #ffffff;
+  border-bottom: 3px solid #b98d72;
+  width: 100px;
+  border-radius: 20%;
 }
 
 .card .card-inner .skill-back {
-  background-color: rgba(0, 0, 0, 0.95);
   transform: rotateY(180deg);
   color: #ffffff;
   border-radius: 5px;
@@ -450,30 +386,7 @@ header #welcomeNote h1 {
 .card .card-inner .skill-back i {
   font-size: 30px;
   padding: 20px 0px;
-}
-
-.card .card-inner .skill-back .fa-html5 {
-  color: #E44D26;
-}
-
-.card .card-inner .skill-back .fa-css3-alt {
-  color: #264de4;
-}
-
-.card .card-inner .skill-back .fa-bootstrap {
-  color: #602C50;
-}
-
-.card .card-inner .skill-back .fa-sass {
-  color: #CD6799;
-}
-
-.card .card-inner .skill-back .fa-php {
-  color: #787CB5;
-}
-
-.card .card-inner .skill-back .fa-java {
-  color: #f89820;
+  color: #b98d72;
 }
 
 .card .card-inner .skill-back p {
@@ -512,9 +425,8 @@ header #welcomeNote h1 {
 }
 
 #aboutMe p span {
-  animation-name: rgb_animation;
-  animation-duration: 21s;
-  animation-iteration-count: infinite;
+  text-shadow: 0px 0px 3px #b98d72;
+  color: #000000;
   text-transform: uppercase;
 }
 
@@ -523,8 +435,14 @@ header #welcomeNote h1 {
   color: #ffffff;
 }
 
-#about #education h3, #about #education h4 {
+#about #education h3 {
+  color: #ffffff;
   padding: 20px 0px;
+}
+
+#about #education h4 {
+  padding: 20px 0px;
+  color: #b98d72;
 }
 
 #about #education #eduHolder {
@@ -539,12 +457,20 @@ header #welcomeNote h1 {
 
 #about #education #eduHolder .edu img {
   width: 60px;
+  border-top: 3px solid #b98d72;
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+#about #education #eduHolder .edu p {
+  border-bottom: 1px solid #b98d72;
+  padding-bottom: 10px;
+  border-radius: 10px;
 }
 
 /*INFORMATION*/
 #information #infoHolder {
   position: relative;
-  justify-content: center;
 }
 
 #information #infoHolder #social {
@@ -565,6 +491,7 @@ header #welcomeNote h1 {
 
 #information #infoHolder #social ul li i {
   font-size: 24px;
+  color: #b98d72;
 }
 
 #information #infoHolder #social ul li:hover {
@@ -572,90 +499,60 @@ header #welcomeNote h1 {
   transition: 1.2s;
 }
 
-#information #infoHolder #social ul li .fa-twitter {
-  color: #1da1f2;
-}
-
-#information #infoHolder #social ul li .fa-whatsapp {
-  color: #25d366;
-}
-
-#information #infoHolder #social ul li .fa-facebook-f {
-  color: #3b5998;
-}
-
-#information #infoHolder #social ul li .fa-viber {
-  color: #8f5db7;
-}
-
-#information #infoHolder #social ul li .fa-linkedin-in {
-  color: #0e76a8;
-}
-
-#information #infoHolder #social ul li .fa-github {
-  color: #c0c0c0;
-}
-
-#information #infoHolder #social ul li .fa-instagram {
-  color: #bc1888;
-}
-
 /*CONTACT*/
 #contact {
-  height: 760px;
+  background-image: url(../img/code5.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #contact p {
   margin: 0 auto;
   width: 90%;
-  margin: 1px auto;
-  padding-bottom: 20px;
 }
 
 #contact #contactHolder {
   position: relative;
+  width: 100%;
 }
 
 #contact #contactHolder i {
   font-size: 9px;
   position: absolute;
-  top: 0;
+  top: 15px;
   right: 50%;
   z-index: 2;
-  animation-name: rgb_animation;
-  animation-duration: 21s;
-  animation-iteration-count: infinite;
+  color: #b98d72;
+  text-shadow: 0px 0px 8px #ffffff;
+  border-radius: 50%;
+  animation: pulse_animation 2.2s linear infinite;
 }
 
 #contact #contactHolder #forma {
   position: relative;
-  margin: 40px auto;
-  width: 800px;
+  margin: 80px auto;
+  width: 840px;
 }
 
 #contact #contactHolder #forma img {
   width: 820px;
   height: 500px;
-  position: absolute;
-  top: -15px;
-  left: 0;
 }
 
 #contact #contactHolder #forma form {
-  width: 810px;
   position: absolute;
-  z-index: 1;
+  top: 50px;
+  left: 121px;
 }
 
 #contact #contactHolder #forma form table {
-  margin: 0px auto;
-  width: 600px;
-  padding: 30px;
+  width: 580px;
   border-spacing: 5px;
 }
 
 #contact #contactHolder #forma form table ::placeholder {
   padding: 0px 5px;
+  color: #b98d72;
 }
 
 #contact #contactHolder #forma form table textarea {
@@ -666,12 +563,12 @@ header #welcomeNote h1 {
   padding: 10px;
   background: transparent;
   font-size: 16px;
-  border: none;
+  border: 1px solid transparent;
 }
 
 #contact #contactHolder #forma form table textarea:focus {
-  box-shadow: 0px 0px 8px 1px #ffffff;
-  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 8px 1px #b98d72;
+  border: 1px solid #b98d72;
 }
 
 #contact #contactHolder #forma form table input {
@@ -681,26 +578,27 @@ header #welcomeNote h1 {
   padding: 10px;
   background: transparent;
   font-size: 16px;
-  border: none;
+  border: 1px solid transparent;
 }
 
 #contact #contactHolder #forma form table input:focus {
-  box-shadow: 0px 0px 8px 1px #ffffff;
-  border: 1px solid #ffffff;
+  box-shadow: 0px 0px 8px 1px #b98d72;
+  border: 1px solid #b98d72;
 }
 
 #contact #contactHolder #forma form table #submit {
-  color: darkgray;
+  color: #b98d72;
 }
 
 #contact #contactHolder #forma form table #submit:hover {
   cursor: pointer;
-  color: #252525;
-  background-color: #ffffff;
+  color: #000000;
+  background-color: #b98d72;
+  box-shadow: 0px 0px 8px 1px #b98d72;
 }
 
 #contact #contactHolder #forma form table #name, #contact #contactHolder #forma form table #email, #contact #contactHolder #forma form table #message {
-  color: #ffffff;
+  color: #b98d72;
 }
 
 #contact .fa-chevron-circle-up {
@@ -708,14 +606,14 @@ header #welcomeNote h1 {
   bottom: 1%;
   right: 1%;
   font-size: 40px;
-  color: #a8a9ad;
+  color: #b98d72;
   border-radius: 50%;
   z-index: 3;
   animation: arrow_animation .4s infinite alternate;
 }
 
 #contact .fa-chevron-circle-up:hover {
-  box-shadow: 0px 0px 8px 1px #a8a9ad;
+  box-shadow: 0px 0px 8px 1px #b98d72;
   animation-play-state: paused;
 }
 
@@ -736,16 +634,9 @@ footer #footerLinks ul li a span {
   text-transform: uppercase;
 }
 
-footer #footerLinks ul li :hover {
-  color: #a8a9ad;
-}
-
 footer p {
-  color: #ffffff;
+  color: #b98d72;
   padding: 30px 0px 10px 0px;
-  animation-name: rgb_animation;
-  animation-duration: 21s;
-  animation-iteration-count: infinite;
 }
 
 /*RESPONSIVE*/
@@ -781,27 +672,18 @@ footer p {
   }
   #aboutMePro {
     width: 50%;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #b98d72;
   }
   #aboutMe p {
     width: 100%;
     padding-top: 20px;
     text-align: center;
   }
-  #contact {
-    height: auto;
-  }
-  #contact #contactHolder {
-    margin: 0 auto;
-    width: 90%;
-  }
   #contact #contactHolder .fa-circle {
     display: none;
   }
   #contact #contactHolder #forma {
-    width: 100%;
-    margin: 0px auto;
-    padding: 40px 0px 60px 0px;
+    width: 85%;
   }
   #contact #contactHolder #forma img {
     display: none;
@@ -809,9 +691,10 @@ footer p {
   #contact #contactHolder #forma form {
     width: 100%;
     position: relative;
+    top: 0;
+    left: 0;
   }
   #contact #contactHolder #forma form table {
-    padding: 0px;
     margin: 0 auto;
     width: 90%;
   }
@@ -827,7 +710,7 @@ footer p {
   }
   #contact #contactHolder #forma form table #submit:hover {
     background-color: rgba(0, 0, 0, 0.95);
-    color: #ffffff;
+    color: #b98d72;
   }
   #information {
     background-color: rgba(0, 0, 0, 0.95);
@@ -849,7 +732,7 @@ footer p {
   }
   #information #infoHolder #social ul li:hover {
     width: 44px;
-    box-shadow: 0px 0px 8px 1px #a8a9ad;
+    box-shadow: 0px 0px 8px 1px #b98d72;
   }
 }
 
@@ -865,12 +748,6 @@ footer p {
   }
   #skillsetList #skillsetHolder .card {
     width: 45%;
-  }
-  #skillsetList #skillsetHolder .card .fa-bootstrap, #skillsetList #skillsetHolder .card .bootstrap {
-    animation-delay: 12.1s;
-  }
-  #skillsetList #skillsetHolder .card .fa-sass, #skillsetList #skillsetHolder .card .sass {
-    animation-delay: .1s;
   }
 }
 
@@ -892,13 +769,9 @@ footer p {
   }
   #skillset #skillsetList #skillsetHolder .card .skill-back i {
     font-size: 26px;
-    padding: 6px 0px;
   }
   #skillset #skillsetList #skillsetHolder .card .skill-back p {
     font-size: 14px;
-  }
-  #contact #contactHolder #forma {
-    width: 100%;
   }
   #contact .fa-chevron-circle-up {
     font-size: 30px;

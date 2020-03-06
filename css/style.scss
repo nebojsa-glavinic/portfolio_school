@@ -1,21 +1,11 @@
-    
+    $color1:#b98d72;
     $color2:#c0c0c0;
-    $color3:#252525;
     $color4:#ffffff;
     $color5:#000000;
     $color6:#a8a9ad;
     $bg_color: rgba(0, 0, 0, 0.95);
-    $twitterBlue:#1da1f2;
-    $facebookBlue:#3b5998;
-    $whatsappGreen:#25d366;
-    $html:#E44D26;
-    $css:#264de4;
-    $bootstrap:#602C50;
-    $sass:#CD6799;
-    $php:#787CB5;
-    $java:#f89820;
-    $viber:#8f5db7;
-    $youtube:#FF0000;
+    $gradient1:linear-gradient(90deg, #b98d72 30%,#d7c797 60%, #dec79b 90%);
+    $gradient2:linear-gradient(90deg, #d7c797 20%,#dec79b 40%, #b98d72 60%);
 
 @font-face{
     font-family: 'Signika', sans-serif;
@@ -48,6 +38,8 @@ h1{
 h2{
     font-size: 32px;
     padding:40px 0px 40px 0px;
+    margin:1px;
+    text-shadow: 0px 0px 3px $color1;
 
 }
 h3{
@@ -68,6 +60,9 @@ a{
     text-decoration: none;
     color:$color4;
     font-size:20px;
+    &:hover {
+        color: $color1;
+    }
 }
 
 .flexRow{
@@ -82,13 +77,11 @@ a{
     justify-content: center;
     flex-wrap: wrap;
 }
-.rgb{
+.rgb {
     text-transform: uppercase;
-    animation: {
-        name:rgb_animation;
-        duration: 21s;
-        iteration-count:infinite;
-    }
+    color:$color1;
+    animation:rgb_animation 3s linear infinite;
+    background: $gradient1;
 }
 
 /* MIXIN */
@@ -100,16 +93,12 @@ a{
     flex-wrap:$wrap;
     align-items: $align;
 }*/
-@mixin rgb{
-    animation: {
-        name:rgb_animation;
-        duration: 21s;
-        iteration-count:infinite;
-    }
-}
 
 @mixin shadow_one {
     box-shadow: 0px 8px 8px $color6;
+}
+@mixin shadow_two($color){
+    box-shadow: 0px 0px 8px 1px $color;
 }
 @mixin a90{
     margin:0 auto;
@@ -121,69 +110,54 @@ a{
     padding:10px;
     background: transparent;
     font-size: 16px;
-    border:none;
+    border:1px solid transparent;
     &:focus {
-        box-shadow: 0px 0px 8px 1px $color4;
-        border: 1px solid $color4;
+        @include shadow_two($color1);
+        border: 1px solid $color1;
     }
 }
 @mixin table-two{
-    color:rgb(169, 169, 169);
+    color:$color1;
     &:hover{
         cursor:pointer;
-        color: $color3;
-        background-color: $color4;
+        color: $color5;
+        background-color: $color1;
+        @include shadow_two($color1);
     }    
-
 }
-
+@mixin gradient1{
+    background: $gradient1;
+    -webkit-background-clip:text;
+    -ms-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+}
+@mixin gradient2{
+    background: $gradient2;
+    -webkit-background-clip:text;
+    -ms-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+}
 /*ANIMATION*/
 
-@keyframes  html_animation {
-    50%{color: $html;}
-}
-@keyframes css_animation {
-    50%{color: $css;}
-    }
-@keyframes bootstrap_animation {
-    50%{color: $bootstrap;}
-}
-@keyframes sass_animation {
-    50%{color: $sass;}
-}
-@keyframes php_animation {
-    50%{color: $php;}
-}
-@keyframes java_animation {
-    50%{color: $java;}
-}
-
-@keyframes rgb_animation {
-    20%{color:$html;}
-    35%{color:$twitterBlue;}
-    50%{color:$sass;}
-    65%{color:$java;}
-    80%{color:$bootstrap;}
-    95%{color:$php;}
-}
-@keyframes rgb_border-bottom {
-    0%{border-bottom:1px solid $color4;}
-    20%{border-bottom:1px solid $html;}
-    35%{border-bottom:1px solid $twitterBlue;}
-    50%{border-bottom:1px solid $sass;}
-    65%{border-bottom:1px solid $java;}
-    80%{border-bottom:1px solid $bootstrap;}
-    95%{border-bottom:1px solid $php;}
-    100%{border-bottom:1px solid $color4;}
-}
 
 @keyframes typing_animation {
-    from { width: 0% }
-    to { width: 100% }
+    from { width: 0%; }
+    to { width: 100%; }
 }
 @keyframes arrow_animation {
     from{bottom:1%;}
     to{bottom:1.2%;}
+}
+@keyframes pulse_animation {
+    10%{box-shadow:0px 0px 16px 0px  $color1;}
+    50%{box-shadow:0px 0px 26px 0px  $color4;}
+    90%{box-shadow:0px 0px 16px 0px  $color1;}
+}
+@keyframes rgb_animation {
+    0%{@include gradient1;}
+    100%{@include gradient2;}
 }
 
 /* HEADER */
@@ -201,7 +175,7 @@ header{
     @include shadow_one;
     #top {
         background-color: $bg_color;
-        animation: rgb_border-bottom 21s infinite;
+        border-bottom:1px solid $color1;
         width:100%;
         position:fixed;
         z-index: 6;
@@ -211,26 +185,23 @@ header{
             justify-content: space-between;
             li {
                 padding:0px 20px;
-                a {
-                    &:hover {
-                        color:$color6;
-                    }     
-                }
             }
         }
-        p, span{
+        p{
             font-weight: 100;
             color:$color4;
             font-size:40px;
             span {
-                font-weight: 800; 
+                font-weight: 800;
+                font-size:40px;
+
             }
         }  
         #hiddenNav{
             display:none;
             i{
                 font-size: 40px;
-                @include rgb;
+                color:$color1;
             }
             #showNav {
                 position:absolute;
@@ -238,14 +209,10 @@ header{
                 top:50px;
                 width:100%;
                 display:none;
+                z-index:-5;
                 ul{
                     background-color: $color5;
                     transition: 0.6s ease;
-                    li{
-                        a:hover{
-                            color:$color6;
-                        }
-                    }
                 }
             }
             #fakeNav {
@@ -301,16 +268,19 @@ header{
                 opacity:0.8;
                 &:hover {
                     transform: scale(1.1);
-                    transition: transform 1.2s;
+                    transition: 1.2s;
                     opacity:1;
                 }
             }
             h3 {
                 margin: 25px 0px 5px 0px;
+                text-shadow:0px 0px 2px $color1;
             }
             p {
-                
                 margin-bottom: 50px;
+                & span{
+                    text-transform: uppercase;
+                }
             }    
             
         }     
@@ -321,8 +291,7 @@ header{
 
 #skillset{
     @include shadow_one;
-    background-color:$color5;
-    opacity:0.95;
+    background-color: $bg_color;
     h2{
         color: $color4;
     }
@@ -339,7 +308,6 @@ header{
 /*CARD*/
 
 .card{
-    background-color: transparent;
     width:15%;
     height:320px;
     perspective: 1000px;
@@ -352,73 +320,54 @@ header{
         height: 100%;
         transition: transform 1.2s;
         transform-style: preserve-3d;
+        -moz-backface-visibility: hidden; /**hmm zasto u mozilli radi kontra :) **/
         .skill-front, .skill-back {
             position: absolute;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
+            /*-moz-backface-visibility: hidden;*/
+            
         }
         .skill-front{
-            background-color: rgba(0, 0, 0, 0.95);
-            i, span{
+            i{
                 font-size: 600%;
-                animation: {
-                    duration: 24s;
-                    iteration-count:infinite;
-                }
-                
+                color:$color1;
             }
+            .pulse {
+                margin-top:20px;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                @include shadow_two($color4);
+                border:1px solid $color1;
+                animation:pulse_animation 4.2s linear infinite;
+                span{
+                    font-size: 40px;
+                    color:$color4;
+                    line-height: 1.5;
+                }
+            }
+            
             p{
-                font-size: 20px;
+                font-size: 18px;
                 color: $color4;
-                border-bottom: 1px solid $color2;
-                border-radius: 10%;
-                width:120px;
-                margin: 23px auto;
+                margin: 15px auto;
                 span{
                     font-size: 50px;
                 }
-                
             }
-            .fa-html5, .html{
-                animation: {
-                    name: html_animation;
-                    delay: .1s;
-                }    
-            } 
-            .fa-css3-alt, .css{
-                animation: {
-                    name: css_animation;
-                    delay: 12.1s;
-                }    
-            }
-            .fa-bootstrap, .bootstrap{
-                animation: {
-                    name: bootstrap_animation;
-                    delay: .1s;
-                }    
-            }
-            .fa-sass, .sass{
-                animation: {
-                    name: sass_animation;
-                    delay: 12.1s;
-                }    
-            }
-            .fa-php, .php{
-                animation: {
-                    name: php_animation;
-                    delay: .1s;
-                }    
-            }
-            .fa-java, .java{
-                animation: {
-                    name: java_animation;
-                    delay: 12.1s;
-                }    
+            .oo100{
+                display: block;
+                margin:10px auto;
+                font-size:18px;
+                color: $color4;
+                border-bottom: 3px solid $color1;
+                width:100px;
+                border-radius:20%;
             }
         }
         .skill-back{
-            background-color: rgba(0, 0, 0, 0.95);
             transform: rotateY(180deg);
             color:$color4;
             border-radius:5px;
@@ -429,25 +378,7 @@ header{
             i{
                 font-size: 30px;
                 padding:20px 0px;
-                   
-            }
-            .fa-html5{
-                color:$html;
-            }
-            .fa-css3-alt{
-                color:$css;
-            }
-            .fa-bootstrap{
-                color:$bootstrap;
-            }
-            .fa-sass{
-                color:$sass;
-            }
-            .fa-php{
-                color:$php;
-            }
-            .fa-java{
-                color:$java;
+                color:$color1;  
             }
             p{
                 font-size: 16px;
@@ -478,7 +409,8 @@ header{
             padding: 5px;
             text-align: justify;
             span{
-                @include rgb;
+                text-shadow: 0px 0px 3px $color1;
+                color:$color5;
                 text-transform: uppercase;
             }
         }
@@ -486,16 +418,30 @@ header{
     #education{
         background-color: $bg_color;
         color:$color4;
-        h3, h4{
+        h3{
+            color:$color4;
             padding:20px 0px;
+        }
+        h4{
+            padding:20px 0px;
+            color:$color1;
         }
         #eduHolder{
             @include a90;
+            
             .edu{
                 width:45%;
                 padding:20px 0px;
                 img{
                     width:60px;
+                    border-top: 3px solid $color1;
+                    border-radius:10px;
+                    padding-top:10px;
+                }
+                p{
+                    border-bottom:1px solid $color1;
+                    padding-bottom:10px;
+                    border-radius:10px;
                 }
             }
         }    
@@ -507,7 +453,6 @@ header{
 #information{
     #infoHolder{
         position:relative;
-        justify-content: center;
         #social{
             position:absolute;
             left:0;
@@ -522,32 +467,11 @@ header{
                 border-top:1px solid $color4;
                 i{
                     font-size: 24px;
+                    color: $color1;
                 }
                 &:hover{
                     width:60px;
                     transition: 1.2s;
-                   
-                }
-                .fa-twitter{
-                    color:$twitterBlue;
-                }
-                .fa-whatsapp{
-                    color:$whatsappGreen;
-                }
-                .fa-facebook-f{
-                    color:$facebookBlue;
-                }
-                .fa-viber{
-                    color:$viber;
-                }
-                .fa-linkedin-in{
-                    color:#0e76a8;
-                }
-                .fa-github{
-                    color:$color2;
-                }
-                .fa-instagram{
-                    color:#bc1888;
                 }
             }    
         }
@@ -558,45 +482,44 @@ header{
 /*CONTACT*/
 
 #contact{
-    height:760px;
+    background-image: url(../img/code5.png);
+    background-size: cover;
+    background-attachment: fixed;
     p{
         @include a90;
-        margin: 1px auto;
-        padding-bottom:20px;
     }
     #contactHolder {
         position:relative;
+        width:100%;
         i{
             font-size: 9px;
             position:absolute;  
-            top:0;
+            top:15px;
             right:50%;
             z-index: 2;
-            @include rgb;
-        } 
+            color:$color1;
+            text-shadow: 0px 0px 8px $color4;
+            border-radius: 50%;
+            animation:pulse_animation 2.2s linear infinite;
+        }
         #forma{
             position:relative;
-            margin: 40px auto;
-            width:800px;
+            margin:80px auto;
+            width:840px;
             img{
                 width:820px;
                 height:500px;
-                position:absolute;
-                top:-15px;
-                left:0;
             }
             form{
-                width:810px;
                 position: absolute;
-                z-index: 1;
-               
+                top:50px;
+                left:121px;
                 table {
-                    margin: 0px auto;
-                    width: 600px;
-                    padding:30px;
+                    width: 580px;
                     border-spacing: 5px;
                     ::placeholder{
                         padding:0px 5px;
+                        color:$color1;
                     }
                     textarea{
                         height: 140px;
@@ -611,7 +534,7 @@ header{
                         @include table-two;
                     }
                     #name, #email, #message {
-                        color:$color4;
+                        color:$color1;
                     }
                 }
             }
@@ -622,12 +545,12 @@ header{
         bottom:1%;
         right:1%;
         font-size:40px;
-        color: $color6;
+        color: $color1;
         border-radius: 50%;
         z-index:3;
-        animation:arrow_animation .4s infinite alternate; 
+        animation:arrow_animation .4s infinite alternate;
         &:hover{
-            box-shadow:0px 0px 8px 1px $color6;
+            @include shadow_two($color1);
             animation-play-state: paused;
         }
     }
@@ -647,16 +570,12 @@ footer{
                         text-transform: uppercase;
                     }
                 }
-                :hover{
-                    color:$color6;
-                }
             }
         } 
     }           
     p{
-        color:$color4;
+        color:$color1;
         padding:30px 0px 10px 0px;
-        @include rgb;
     }   
 }
 
@@ -703,7 +622,7 @@ footer{
         padding-bottom: 20px;
         &Pro{
             width:50%;
-            border-bottom: 1px solid $color5;
+            border-bottom: 1px solid $color1;
         }
         p{
             width:100%;
@@ -712,38 +631,35 @@ footer{
         }
     }
     #contact{
-        height:auto;
         #contactHolder{
-            @include a90;
             .fa-circle{
                 display:none;
             }
             #forma{
-                width:100%;
-                margin:0px auto;
-                padding:40px 0px 60px 0px;
+                width:85%;
                 img{
                     display:none;
                 }
                 form{
                     width:100%;
                     position:relative;
+                    top:0;
+                    left:0;
                     table{
-                        padding:0px;
                         @include a90;
                         input, textarea, #submit {
                             border:1px solid $color5;
-                            box-shadow: 0px 0px 8px 1px $bg_color;
+                            @include shadow_two($bg_color);
                         }
                         #name, #email, #message{
                             color:$color5;
                             &:focus{
-                                box-shadow: 0px 0px 8px 1px $bg_color;
+                                @include shadow_two($bg_color);
                             }
                         }
                         #submit:hover{
                             background-color: $bg_color;
-                            color:$color4;
+                            color:$color1;
                         }
                     }
                     
@@ -768,7 +684,7 @@ footer{
                         border-radius:50%;
                         &:hover{
                             width:44px;
-                            box-shadow:0px 0px 8px 1px $color6;
+                            @include shadow_two($color1);
                         }
                     }
                     
@@ -784,20 +700,18 @@ footer{
         font-size: 42px;
     }
     
-    #projects #projectsList .projectsItem{
-        width:80%;
-    }
+    #projects{
+        #projectsList{
+            .projectsItem{
+                width:80%;
+            }
+        }
+    }  
     #skillsetList{
         #skillsetHolder{
             justify-content: space-around;
             .card {
                 width:45%;
-                .fa-bootstrap, .bootstrap{
-                    animation-delay: 12.1s;  
-                }
-                .fa-sass, .sass{
-                    animation-delay: .1s;  
-                }
             }
         }    
     }
@@ -833,7 +747,6 @@ footer{
                     .skill-back{
                         i{
                             font-size: 26px;
-                            padding:6px 0px;
                         }
                         p{
                             font-size:14px;
@@ -841,18 +754,10 @@ footer{
                     }
                 }
             }
-        }                        
-        
+        }  
     }
-    #contact{
-        #contactHolder{
-            #forma{
-                width:100%;
-            }
-        }
-        .fa-chevron-circle-up{
-            font-size: 30px;
-        }
-    }    
+    #contact .fa-chevron-circle-up{
+        font-size: 30px;
+    } 
 }
 
