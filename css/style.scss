@@ -167,7 +167,7 @@ header{
     z-index: 5;
     position: relative;
     background: {
-        image: url("../img/slider4.jpg");
+        image: url("../img/hp4.jpg");
         position: center;
         repeat: no-repeat;
         size: cover;
@@ -244,12 +244,14 @@ header{
             right:4%;
             h1, h3, p {
                 text-align: left;
+                
             }
             h1{
                 text-transform: uppercase;
                 overflow: hidden;
                 white-space: nowrap;
                 animation: typing_animation 2s steps(20);
+                text-shadow: 3px 2px 5px $color5;
             }
         }
     }

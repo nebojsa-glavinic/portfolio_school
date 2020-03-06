@@ -145,7 +145,7 @@ header {
   height: 100vh;
   z-index: 5;
   position: relative;
-  background-image: url("../img/slider4.jpg");
+  background-image: url("../img/hp4.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -243,6 +243,7 @@ header #welcomeNote h1 {
   overflow: hidden;
   white-space: nowrap;
   animation: typing_animation 2s steps(20);
+  text-shadow: 3px 2px 5px #000000;
 }
 
 /*PROJECTS*/
