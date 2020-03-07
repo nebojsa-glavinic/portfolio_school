@@ -7,10 +7,10 @@
     $gradient1:linear-gradient(90deg, #b98d72 30%,#d7c797 60%, #dec79b 90%);
     $gradient2:linear-gradient(90deg, #d7c797 20%,#dec79b 40%, #b98d72 60%);
 
-@font-face{
+/*@font-face{
     font-family: 'Signika', sans-serif;
     src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
-}
+}*/
 *{
     padding:0px;
     margin: 0px;
@@ -33,14 +33,11 @@ p{
 }
 h1{
     font-size: 52px;
-    
 }
 h2{
     font-size: 32px;
     padding:40px 0px;
     margin:1px auto;
-    /*text-shadow: 1px 1px 3px $color1;*/
-
 }
 h3{
     font-size: 24px;
@@ -169,7 +166,7 @@ header{
     z-index: 5;
     position: relative;
     background: {
-        image: url("../img/hp4.jpg");
+        image: url("../img/hp4s.jpg");
         position: center;
         repeat: no-repeat;
         size: cover;
@@ -184,7 +181,6 @@ header{
         padding:5px 25px;
         align-items: center;
         nav ul {
-            justify-content: space-between;
             li {
                 padding:0px 20px;
                 a{
@@ -196,13 +192,9 @@ header{
             }
         }
         p{
-            font-weight: 100;
-            color:$color4;
-            font-size:40px;
             span {
                 font-weight: 800;
                 font-size:40px;
-
             }
         }  
         #hiddenNav{
@@ -242,14 +234,10 @@ header{
             }
             label {
                 cursor: pointer;
-                
             }
         }
     }
     #welcome {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
         color:$color4;
         &Note {
             position:absolute;
@@ -257,7 +245,6 @@ header{
             right:4%;
             h1, h3, p {
                 text-align: left;
-                
             }
             h1{
                 text-transform: uppercase;
@@ -289,7 +276,6 @@ header{
             }
             h3 {
                 margin: 25px 0px 5px 0px;
-                /*text-shadow:0px 0px 2px $color1;*/
             }
             p {
                 margin-bottom: 50px;
@@ -348,7 +334,6 @@ header{
             justify-content: flex-start;
             i{
                 font-size: 600%;
-                width:100%;
             }
             .pulse {
                 width: 65px;
@@ -601,7 +586,7 @@ footer{
 }
 
 /*RESPONSIVE*/
-/* from 414 to 1920*/
+/* from 320 to 1920*/
 
 @media screen and (max-width:1280px){
     #projects{
@@ -793,27 +778,31 @@ footer{
     p, input, textarea{
         font-size: 16px;
     }
-    #welcome{
-        #welcomeNote{
-        background-color: $bg_opacity;
-        left:0;
-        bottom:0;
-        width:100%;
-        align-items: center;
-        text-align: justify;
-        padding:10px 0px;
-            h1{
-                animation: typing-520 2s steps(30);
-            }
-            p{
-                font-size: 14px;
-            }    
-        }    
-    }
     @keyframes typing-520 {
         from { width: 0%; }
         to { width: 50%; }
     }
+    #welcome{
+        #welcomeNote{
+            background-color: $bg_opacity;
+            left:0;
+            bottom:0;
+            width:100%;
+            align-items: center;
+            text-align: justify;
+            padding:10px 0px;
+            h1{
+                animation:typing-520 2s steps(30);
+            }
+            p{
+                font-size: 13px;
+            }
+            h3{
+                font-size: 20px;
+            }      
+        }    
+    }
+    
     #projects{
         #projectsList{
             .projectsItem{

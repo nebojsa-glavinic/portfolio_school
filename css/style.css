@@ -1,8 +1,7 @@
-@font-face {
-  font-family: 'Signika', sans-serif;
-  src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
-}
-
+/*@font-face{
+    font-family: 'Signika', sans-serif;
+    src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
+}*/
 * {
   padding: 0px;
   margin: 0px;
@@ -33,7 +32,6 @@ h2 {
   font-size: 32px;
   padding: 40px 0px;
   margin: 1px auto;
-  /*text-shadow: 1px 1px 3px $color1;*/
 }
 
 h3 {
@@ -139,7 +137,7 @@ header {
   height: 100vh;
   z-index: 5;
   position: relative;
-  background-image: url("../img/hp4.jpg");
+  background-image: url("../img/hp4s.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -156,10 +154,6 @@ header #top {
   align-items: center;
 }
 
-header #top nav ul {
-  justify-content: space-between;
-}
-
 header #top nav ul li {
   padding: 0px 20px;
 }
@@ -170,12 +164,6 @@ header #top nav ul li a {
 
 header #top nav ul li a:hover {
   color: #ffffff;
-}
-
-header #top p {
-  font-weight: 100;
-  color: #ffffff;
-  font-size: 40px;
 }
 
 header #top p span {
@@ -231,9 +219,6 @@ header #top #hiddenNav label {
 }
 
 header #welcome {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
   color: #ffffff;
 }
 
@@ -279,7 +264,6 @@ header #welcomeNote h1 {
 
 #projects #projectsList .projectsItem h3 {
   margin: 25px 0px 5px 0px;
-  /*text-shadow:0px 0px 2px $color1;*/
 }
 
 #projects #projectsList .projectsItem p {
@@ -347,7 +331,6 @@ header #welcomeNote h1 {
 
 .card .card-inner .skill-front i {
   font-size: 600%;
-  width: 100%;
 }
 
 .card .card-inner .skill-front .pulse {
@@ -673,7 +656,7 @@ footer p {
 }
 
 /*RESPONSIVE*/
-/* from 414 to 1920*/
+/* from 320 to 1920*/
 @media screen and (max-width: 1280px) {
   #projects #projectsList {
     justify-content: space-around;
@@ -840,6 +823,14 @@ footer p {
   p, input, textarea {
     font-size: 16px;
   }
+  @keyframes typing-520 {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 50%;
+    }
+  }
   #welcome #welcomeNote {
     background-color: rgba(24, 24, 30, 0.9);
     left: 0;
@@ -853,15 +844,10 @@ footer p {
     animation: typing-520 2s steps(30);
   }
   #welcome #welcomeNote p {
-    font-size: 14px;
+    font-size: 13px;
   }
-  @keyframes typing-520 {
-    from {
-      width: 0%;
-    }
-    to {
-      width: 50%;
-    }
+  #welcome #welcomeNote h3 {
+    font-size: 20px;
   }
   #projects #projectsList .projectsItem {
     width: 87%;
