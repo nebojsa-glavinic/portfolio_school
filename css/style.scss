@@ -1,8 +1,9 @@
     $color1:#b98d72;
-    $color2:#c0c0c0;
+    $color2:#dec79b;
     $color4:#ffffff;
     $color6:#a8a9ad;
     $bg_color:#18181e;
+    $bg_opacity:rgba(24, 24, 30, 0.9);
     $gradient1:linear-gradient(90deg, #b98d72 30%,#d7c797 60%, #dec79b 90%);
     $gradient2:linear-gradient(90deg, #d7c797 20%,#dec79b 40%, #b98d72 60%);
 
@@ -38,7 +39,7 @@ h2{
     font-size: 32px;
     padding:40px 0px;
     margin:1px auto;
-    text-shadow: 1px 1px 3px $color1;
+    /*text-shadow: 1px 1px 3px $color1;*/
 
 }
 h3{
@@ -186,6 +187,12 @@ header{
             justify-content: space-between;
             li {
                 padding:0px 20px;
+                a{
+                    color:$color1;
+                    &:hover{
+                        color:$color4;
+                    }
+                }
             }
         }
         p{
@@ -209,10 +216,16 @@ header{
                 top:50px;
                 width:100%;
                 display:none;
-                z-index:-5;
+                z-index:5;
                 ul{
                     background-color: $bg_color;
                     transition: 0.6s ease;
+                    li a{
+                        color:$color1;
+                        &:hover{
+                            color:$color4;
+                        }
+                    }
                 }
             }
             #fakeNav {
@@ -276,7 +289,7 @@ header{
             }
             h3 {
                 margin: 25px 0px 5px 0px;
-                text-shadow:0px 0px 2px $color1;
+                /*text-shadow:0px 0px 2px $color1;*/
             }
             p {
                 margin-bottom: 50px;
@@ -477,7 +490,7 @@ header{
 /*CONTACT*/
 
 #contact{
-    background: linear-gradient(135deg, $color4, $color4, #dec79b);
+    background: linear-gradient(135deg, $color4, $color4, $color2);
     p{
         @include a90;
     }
@@ -588,6 +601,7 @@ footer{
 }
 
 /*RESPONSIVE*/
+/* from 414 to 1920*/
 
 @media screen and (max-width:1280px){
     #projects{
@@ -737,12 +751,17 @@ footer{
             }
         }    
     }
-    #personal{
+    #contact #personal{
         ul{
+            width:100%;
             li{
+                padding:10px 0px;
                 a{
-                    @include flex (column, center, center, nowrap);
-                    font-size: 20px;
+                    @include flex (column, space-between, center, nowrap);
+                    font-size: 14px;
+                    i{
+                        font-size: 24px;
+                    }
                     span{
                         padding-top:10px;
                         font-size: 16px;
@@ -765,14 +784,35 @@ footer{
 }
 @media screen and (max-width:520px){
     h1{
-        font-size: 30px;
+        font-size: 26px;
     }
     h2{
-        font-size: 28px;
+        font-size: 24px;
     }
     
     p, input, textarea{
         font-size: 16px;
+    }
+    #welcome{
+        #welcomeNote{
+        background-color: $bg_opacity;
+        left:0;
+        bottom:0;
+        width:100%;
+        align-items: center;
+        text-align: justify;
+        padding:10px 0px;
+            h1{
+                animation: typing-520 2s steps(30);
+            }
+            p{
+                font-size: 14px;
+            }    
+        }    
+    }
+    @keyframes typing-520 {
+        from { width: 0%; }
+        to { width: 50%; }
     }
     #projects{
         #projectsList{

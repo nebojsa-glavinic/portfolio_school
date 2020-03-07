@@ -33,7 +33,7 @@ h2 {
   font-size: 32px;
   padding: 40px 0px;
   margin: 1px auto;
-  text-shadow: 1px 1px 3px #b98d72;
+  /*text-shadow: 1px 1px 3px $color1;*/
 }
 
 h3 {
@@ -164,6 +164,14 @@ header #top nav ul li {
   padding: 0px 20px;
 }
 
+header #top nav ul li a {
+  color: #b98d72;
+}
+
+header #top nav ul li a:hover {
+  color: #ffffff;
+}
+
 header #top p {
   font-weight: 100;
   color: #ffffff;
@@ -189,12 +197,20 @@ header #top #hiddenNav #showNav {
   top: 50px;
   width: 100%;
   display: none;
-  z-index: -5;
+  z-index: 5;
 }
 
 header #top #hiddenNav #showNav ul {
   background-color: #18181e;
   transition: 0.6s ease;
+}
+
+header #top #hiddenNav #showNav ul li a {
+  color: #b98d72;
+}
+
+header #top #hiddenNav #showNav ul li a:hover {
+  color: #ffffff;
 }
 
 header #top #hiddenNav #fakeNav {
@@ -263,7 +279,7 @@ header #welcomeNote h1 {
 
 #projects #projectsList .projectsItem h3 {
   margin: 25px 0px 5px 0px;
-  text-shadow: 0px 0px 2px #b98d72;
+  /*text-shadow:0px 0px 2px $color1;*/
 }
 
 #projects #projectsList .projectsItem p {
@@ -657,6 +673,7 @@ footer p {
 }
 
 /*RESPONSIVE*/
+/* from 414 to 1920*/
 @media screen and (max-width: 1280px) {
   #projects #projectsList {
     justify-content: space-around;
@@ -780,15 +797,24 @@ footer p {
   #skillsetList #skillsetHolder .card {
     width: 45%;
   }
-  #personal ul li a {
+  #contact #personal ul {
+    width: 100%;
+  }
+  #contact #personal ul li {
+    padding: 10px 0px;
+  }
+  #contact #personal ul li a {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: center;
     align-items: nowrap;
-    font-size: 20px;
+    font-size: 14px;
   }
-  #personal ul li a span {
+  #contact #personal ul li a i {
+    font-size: 24px;
+  }
+  #contact #personal ul li a span {
     padding-top: 10px;
     font-size: 16px;
   }
@@ -806,13 +832,36 @@ footer p {
 
 @media screen and (max-width: 520px) {
   h1 {
-    font-size: 30px;
+    font-size: 26px;
   }
   h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
   p, input, textarea {
     font-size: 16px;
+  }
+  #welcome #welcomeNote {
+    background-color: rgba(24, 24, 30, 0.9);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    text-align: justify;
+    padding: 10px 0px;
+  }
+  #welcome #welcomeNote h1 {
+    animation: typing-520 2s steps(30);
+  }
+  #welcome #welcomeNote p {
+    font-size: 14px;
+  }
+  @keyframes typing-520 {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 50%;
+    }
   }
   #projects #projectsList .projectsItem {
     width: 87%;
