@@ -12,13 +12,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 40px;
+  scroll-padding-top: 50px;
   text-align: center;
 }
 
 /*  BASIC  */
 i {
-  color: #ffffff;
+  color: #b98d72;
 }
 
 p {
@@ -31,9 +31,9 @@ h1 {
 
 h2 {
   font-size: 32px;
-  padding: 40px 0px 40px 0px;
-  margin: 1px;
-  text-shadow: 0px 0px 3px #b98d72;
+  padding: 40px 0px;
+  margin: 1px auto;
+  text-shadow: 1px 1px 3px #b98d72;
 }
 
 h3 {
@@ -85,13 +85,6 @@ a:hover {
 }
 
 /* MIXIN */
-/*@mixin flex($direction, $justify, $wrap, $align){
-    display:flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    flex-wrap:$wrap;
-    align-items: $align;
-}*/
 /*ne rade u ms iz nekog razloga gradient1 i gradient2*/
 /*ANIMATION*/
 @keyframes typing_animation {
@@ -188,7 +181,6 @@ header #top #hiddenNav {
 
 header #top #hiddenNav i {
   font-size: 40px;
-  color: #b98d72;
 }
 
 header #top #hiddenNav #showNav {
@@ -339,22 +331,21 @@ header #welcomeNote h1 {
 
 .card .card-inner .skill-front i {
   font-size: 600%;
-  color: #b98d72;
+  width: 100%;
 }
 
 .card .card-inner .skill-front .pulse {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   box-shadow: 0px 0px 8px 1px #ffffff;
   border: 1px solid #b98d72;
   animation: pulse_animation 4.2s linear infinite;
   color: #ffffff;
-  font-size: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 28px;
+  padding: 15px;
   margin: 15px auto;
+  display: block;
 }
 
 .card .card-inner .skill-front p {
@@ -363,6 +354,7 @@ header #welcomeNote h1 {
 }
 
 .card .card-inner .skill-front .oo100 {
+  font-size: 18px;
   color: #ffffff;
   border-bottom: 3px solid #b98d72;
   width: 100px;
@@ -385,7 +377,6 @@ header #welcomeNote h1 {
 .card .card-inner .skill-back i {
   font-size: 30px;
   padding: 20px 0px;
-  color: #b98d72;
 }
 
 .card .card-inner .skill-back p {
@@ -490,7 +481,6 @@ header #welcomeNote h1 {
 
 #information #infoHolder #social ul li i {
   font-size: 24px;
-  color: #b98d72;
 }
 
 #information #infoHolder #social ul li:hover {
@@ -501,7 +491,6 @@ header #welcomeNote h1 {
 /*CONTACT*/
 #contact {
   background: linear-gradient(135deg, #ffffff, #ffffff, #dec79b);
-  padding-bottom: 40px;
 }
 
 #contact p {
@@ -520,7 +509,6 @@ header #welcomeNote h1 {
   top: 15px;
   right: 50%;
   z-index: 2;
-  color: #b98d72;
   text-shadow: 0px 0px 8px #ffffff;
   border-radius: 50%;
   animation: pulse_animation 2.2s linear infinite;
@@ -528,7 +516,7 @@ header #welcomeNote h1 {
 
 #contact #contactHolder #forma {
   position: relative;
-  margin: 40px auto;
+  margin: 50px auto;
   width: 840px;
 }
 
@@ -599,12 +587,35 @@ header #welcomeNote h1 {
   color: #b98d72;
 }
 
+#contact #personal {
+  width: 100%;
+  background-color: #18181e;
+  border-bottom: 1px solid #b98d72;
+}
+
+#contact #personal ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: center;
+  align-items: wrap;
+  margin: 0 auto;
+  width: 90%;
+}
+
+#contact #personal ul li {
+  width: 33.33%;
+}
+
+#contact #personal ul li a {
+  font-size: 18px;
+}
+
 #contact .fa-chevron-circle-up {
   position: fixed;
   bottom: 1%;
   right: 1%;
   font-size: 40px;
-  color: #b98d72;
   border-radius: 50%;
   z-index: 3;
   animation: arrow_animation .4s infinite alternate;
@@ -620,8 +631,16 @@ footer {
   background-color: #18181e;
 }
 
+footer #footerLinks ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 footer #footerLinks ul li {
-  padding: 5px;
+  padding: 15px 30px;
 }
 
 footer #footerLinks ul li a {
@@ -634,7 +653,7 @@ footer #footerLinks ul li a span {
 
 footer p {
   color: #b98d72;
-  padding: 30px 0px 10px 0px;
+  padding: 20px 0px;
 }
 
 /*RESPONSIVE*/
@@ -713,6 +732,17 @@ footer p {
     background-color: #18181e;
     color: #b98d72;
   }
+  #contact #personal {
+    background: transparent;
+    /*text-shadow:1px 1px 1px #18181e;*/
+  }
+  #contact #personal a {
+    color: #18181e;
+    font-size: 16px;
+  }
+  #contact #personal a:hover {
+    color: #b98d72;
+  }
   #information {
     background-color: #18181e;
     height: 80px;
@@ -750,6 +780,28 @@ footer p {
   #skillsetList #skillsetHolder .card {
     width: 45%;
   }
+  #personal ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: center;
+    align-items: nowrap;
+    font-size: 20px;
+  }
+  #personal ul li a span {
+    padding-top: 10px;
+    font-size: 16px;
+  }
+  footer #footerLinks ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  footer #footerLinks ul li {
+    padding: 3px;
+  }
 }
 
 @media screen and (max-width: 520px) {
@@ -766,7 +818,13 @@ footer p {
     width: 87%;
   }
   #skillset #skillsetList #skillsetHolder .card .skill-front i {
-    font-size: 100px;
+    font-size: 500%;
+  }
+  #skillset #skillsetList #skillsetHolder .card .skill-front .pulse {
+    width: 50px;
+    height: 50px;
+    font-size: 26px;
+    padding: 8px;
   }
   #skillset #skillsetList #skillsetHolder .card .skill-back i {
     font-size: 26px;
