@@ -5,7 +5,8 @@
 * {
   padding: 0px;
   margin: 0px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'Signika', sans-serif;
 }
 
@@ -31,7 +32,7 @@ h1 {
 h2 {
   font-size: 32px;
   padding: 40px 0px;
-  /*margin:1px auto;*/
+  margin: 1px auto;
 }
 
 h3 {
@@ -62,35 +63,70 @@ a:hover {
 }
 
 .flexRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .flexCol {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .rgb {
   text-transform: uppercase;
   color: #b98d72;
-  animation: rgb_animation 3s linear infinite;
+  -webkit-animation: rgb_animation 3s linear infinite;
+          animation: rgb_animation 3s linear infinite;
+  background: -webkit-gradient(linear, left top, right top, color-stop(30%, #b98d72), color-stop(60%, #d7c797), color-stop(90%, #dec79b));
   background: linear-gradient(90deg, #b98d72 30%, #d7c797 60%, #dec79b 90%);
 }
 
 /* MIXIN */
 /*ne rade u ms iz nekog razloga gradient1 i gradient2*/
 /*ANIMATION*/
+@-webkit-keyframes typing_animation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
 @keyframes typing_animation {
   from {
     width: 0%;
   }
   to {
     width: 100%;
+  }
+}
+
+@-webkit-keyframes arrow_animation {
+  from {
+    bottom: 1%;
+  }
+  to {
+    bottom: 1.2%;
   }
 }
 
@@ -103,20 +139,39 @@ a:hover {
   }
 }
 
-@keyframes pulse_animation {
+@-webkit-keyframes pulse_animation {
   10% {
-    box-shadow: 0px 0px 16px 0px #b98d72;
+    -webkit-box-shadow: 0px 0px 16px 0px #b98d72;
+            box-shadow: 0px 0px 16px 0px #b98d72;
   }
   50% {
-    box-shadow: 0px 0px 26px 0px #ffffff;
+    -webkit-box-shadow: 0px 0px 26px 0px #ffffff;
+            box-shadow: 0px 0px 26px 0px #ffffff;
   }
   90% {
-    box-shadow: 0px 0px 16px 0px #b98d72;
+    -webkit-box-shadow: 0px 0px 16px 0px #b98d72;
+            box-shadow: 0px 0px 16px 0px #b98d72;
   }
 }
 
-@keyframes rgb_animation {
+@keyframes pulse_animation {
+  10% {
+    -webkit-box-shadow: 0px 0px 16px 0px #b98d72;
+            box-shadow: 0px 0px 16px 0px #b98d72;
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 26px 0px #ffffff;
+            box-shadow: 0px 0px 26px 0px #ffffff;
+  }
+  90% {
+    -webkit-box-shadow: 0px 0px 16px 0px #b98d72;
+            box-shadow: 0px 0px 16px 0px #b98d72;
+  }
+}
+
+@-webkit-keyframes rgb_animation {
   0% {
+    background: -webkit-gradient(linear, left top, right top, color-stop(30%, #b98d72), color-stop(60%, #d7c797), color-stop(90%, #dec79b));
     background: linear-gradient(90deg, #b98d72 30%, #d7c797 60%, #dec79b 90%);
     -webkit-background-clip: text;
     -ms-background-clip: text;
@@ -124,6 +179,26 @@ a:hover {
     -ms-text-fill-color: transparent;
   }
   100% {
+    background: -webkit-gradient(linear, left top, right top, color-stop(20%, #d7c797), color-stop(40%, #dec79b), color-stop(60%, #b98d72));
+    background: linear-gradient(90deg, #d7c797 20%, #dec79b 40%, #b98d72 60%);
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+  }
+}
+
+@keyframes rgb_animation {
+  0% {
+    background: -webkit-gradient(linear, left top, right top, color-stop(30%, #b98d72), color-stop(60%, #d7c797), color-stop(90%, #dec79b));
+    background: linear-gradient(90deg, #b98d72 30%, #d7c797 60%, #dec79b 90%);
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+  }
+  100% {
+    background: -webkit-gradient(linear, left top, right top, color-stop(20%, #d7c797), color-stop(40%, #dec79b), color-stop(60%, #b98d72));
     background: linear-gradient(90deg, #d7c797 20%, #dec79b 40%, #b98d72 60%);
     -webkit-background-clip: text;
     -ms-background-clip: text;
@@ -149,7 +224,8 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0px 8px 8px #a8a9ad;
+  -webkit-box-shadow: 0px 8px 8px #a8a9ad;
+          box-shadow: 0px 8px 8px #a8a9ad;
 }
 
 header #top {
@@ -159,7 +235,9 @@ header #top {
   position: fixed;
   z-index: 6;
   padding: 5px 25px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header #top nav ul li {
@@ -198,6 +276,7 @@ header #top #hiddenNav #showNav {
 
 header #top #hiddenNav #showNav ul {
   background-color: #18181e;
+  -webkit-transition: 0.6s ease;
   transition: 0.6s ease;
 }
 
@@ -218,7 +297,9 @@ header #top #hiddenNav #fakeNav:checked ~ #showNav {
 }
 
 header #top #hiddenNav #fakeNav:checked ~ label i {
-  transform: rotateZ(90deg);
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  -webkit-transition: 0.6s ease-in-out;
   transition: 0.6s ease-in-out;
 }
 
@@ -244,7 +325,8 @@ header #welcomeNote h1 {
   text-transform: uppercase;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing_animation 2s steps(20);
+  -webkit-animation: typing_animation 2s steps(20);
+          animation: typing_animation 2s steps(20);
   text-shadow: 3px 2px 5px #18181e;
 }
 
@@ -266,7 +348,9 @@ header #welcomeNote h1 {
 }
 
 #projects #projectsList .projectsItem a img:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1.2s;
   transition: 1.2s;
   opacity: 1;
 }
@@ -285,7 +369,8 @@ header #welcomeNote h1 {
 
 /*SKILLSET*/
 #skillset {
-  box-shadow: 0px 8px 8px #a8a9ad;
+  -webkit-box-shadow: 0px 8px 8px #a8a9ad;
+          box-shadow: 0px 8px 8px #a8a9ad;
   background-color: #18181e;
 }
 
@@ -302,26 +387,33 @@ header #welcomeNote h1 {
   margin: 0 auto;
   width: 90%;
   position: relative;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 /*CARD*/
 .card {
   width: 15%;
   height: 320px;
-  perspective: 1000px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 .card:hover .card-inner {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .card .card-inner {
   position: relative;
   width: 100%;
   height: 100%;
+  -webkit-transition: -webkit-transform 1.2s;
+  transition: -webkit-transform 1.2s;
   transition: transform 1.2s;
-  transform-style: preserve-3d;
+  transition: transform 1.2s, -webkit-transform 1.2s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   -moz-backface-visibility: hidden;
   /**hmm zasto u mozilli radi kontra :) **/
 }
@@ -330,12 +422,15 @@ header #welcomeNote h1 {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   /*-moz-backface-visibility: hidden;*/
 }
 
 .card .card-inner .skill-front {
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .card .card-inner .skill-front i {
@@ -346,9 +441,11 @@ header #welcomeNote h1 {
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  box-shadow: 0px 0px 8px 1px #ffffff;
+  -webkit-box-shadow: 0px 0px 8px 1px #ffffff;
+          box-shadow: 0px 0px 8px 1px #ffffff;
   border: 1px solid #b98d72;
-  animation: pulse_animation 4.2s linear infinite;
+  -webkit-animation: pulse_animation 4.2s linear infinite;
+          animation: pulse_animation 4.2s linear infinite;
   color: #ffffff;
   font-size: 28px;
   padding: 15px;
@@ -372,7 +469,8 @@ header #welcomeNote h1 {
 }
 
 .card .card-inner .skill-back {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
   color: #ffffff;
   border-radius: 5px;
   padding: 5px;
@@ -396,11 +494,21 @@ header #welcomeNote h1 {
 }
 
 #servicesHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: center;
-  align-items: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: center;
+      flex-wrap: center;
+  -webkit-box-align: wrap;
+      -ms-flex-align: wrap;
+          align-items: wrap;
   position: relative;
   padding: 20px 0px;
   /*#bridge{
@@ -444,11 +552,14 @@ header #welcomeNote h1 {
 
 /*ABOUT*/
 #about {
-  box-shadow: 0px 8px 8px #a8a9ad;
+  -webkit-box-shadow: 0px 8px 8px #a8a9ad;
+          box-shadow: 0px 8px 8px #a8a9ad;
 }
 
 #aboutMe {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 auto;
   width: 90%;
 }
@@ -540,6 +651,7 @@ header #welcomeNote h1 {
 
 #information #infoHolder #social ul li:hover {
   width: 60px;
+  -webkit-transition: 1.2s;
   transition: 1.2s;
 }
 
@@ -566,7 +678,8 @@ header #welcomeNote h1 {
   z-index: 2;
   text-shadow: 0px 0px 8px #ffffff;
   border-radius: 50%;
-  animation: pulse_animation 2.2s linear infinite;
+  -webkit-animation: pulse_animation 2.2s linear infinite;
+          animation: pulse_animation 2.2s linear infinite;
 }
 
 #contact #contactHolder #forma {
@@ -591,6 +704,21 @@ header #welcomeNote h1 {
   border-spacing: 5px;
 }
 
+#contact #contactHolder #forma form table ::-webkit-input-placeholder {
+  padding: 0px 5px;
+  color: #b98d72;
+}
+
+#contact #contactHolder #forma form table :-ms-input-placeholder {
+  padding: 0px 5px;
+  color: #b98d72;
+}
+
+#contact #contactHolder #forma form table ::-ms-input-placeholder {
+  padding: 0px 5px;
+  color: #b98d72;
+}
+
 #contact #contactHolder #forma form table ::placeholder {
   padding: 0px 5px;
   color: #b98d72;
@@ -608,7 +736,8 @@ header #welcomeNote h1 {
 }
 
 #contact #contactHolder #forma form table textarea:focus {
-  box-shadow: 0px 0px 8px 1px #b98d72;
+  -webkit-box-shadow: 0px 0px 8px 1px #b98d72;
+          box-shadow: 0px 0px 8px 1px #b98d72;
   border: 1px solid #b98d72;
 }
 
@@ -623,7 +752,8 @@ header #welcomeNote h1 {
 }
 
 #contact #contactHolder #forma form table input:focus {
-  box-shadow: 0px 0px 8px 1px #b98d72;
+  -webkit-box-shadow: 0px 0px 8px 1px #b98d72;
+          box-shadow: 0px 0px 8px 1px #b98d72;
   border: 1px solid #b98d72;
 }
 
@@ -635,7 +765,8 @@ header #welcomeNote h1 {
   cursor: pointer;
   color: #18181e;
   background-color: #b98d72;
-  box-shadow: 0px 0px 8px 1px #b98d72;
+  -webkit-box-shadow: 0px 0px 8px 1px #b98d72;
+          box-shadow: 0px 0px 8px 1px #b98d72;
 }
 
 #contact #contactHolder #forma form table #name, #contact #contactHolder #forma form table #email, #contact #contactHolder #forma form table #message {
@@ -649,11 +780,20 @@ header #welcomeNote h1 {
 }
 
 #contact #personal ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: center;
-  align-items: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: center;
+      flex-wrap: center;
+  -webkit-box-align: wrap;
+      -ms-flex-align: wrap;
+          align-items: wrap;
   margin: 0 auto;
   width: 90%;
 }
@@ -673,11 +813,13 @@ header #welcomeNote h1 {
   font-size: 40px;
   border-radius: 50%;
   z-index: 3;
-  animation: arrow_animation .4s infinite alternate;
+  -webkit-animation: arrow_animation .4s infinite alternate;
+          animation: arrow_animation .4s infinite alternate;
 }
 
 #contact .fa-chevron-circle-up:hover {
-  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
   opacity: 0.8;
 }
 
@@ -687,11 +829,21 @@ footer {
 }
 
 footer #footerLinks ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer #footerLinks ul li {
@@ -715,7 +867,8 @@ footer p {
 /* from 320 to 1920 */
 @media screen and (max-width: 1280px) {
   #projects #projectsList {
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   #projects #projectsList .projectsItem {
     width: 43%;
@@ -740,19 +893,26 @@ footer p {
     font-size: 30px;
   }
   #aboutMe {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding-bottom: 20px;
   }
   #aboutMePro {
     width: 50%;
     border-bottom: 1px solid #b98d72;
-    order: 1;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
   #aboutMe p {
     width: 100%;
     padding-top: 20px;
     text-align: center;
-    order: 2;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
   #contact #contactHolder .fa-circle {
     display: none;
@@ -775,14 +935,16 @@ footer p {
   }
   #contact #contactHolder #forma form table input, #contact #contactHolder #forma form table textarea, #contact #contactHolder #forma form table #submit {
     border: 1px solid #18181e;
-    box-shadow: 0px 0px 8px 1px #18181e;
+    -webkit-box-shadow: 0px 0px 8px 1px #18181e;
+            box-shadow: 0px 0px 8px 1px #18181e;
     background-color: #ffffff;
   }
   #contact #contactHolder #forma form table #name, #contact #contactHolder #forma form table #email, #contact #contactHolder #forma form table #message {
     color: #18181e;
   }
   #contact #contactHolder #forma form table #name:focus, #contact #contactHolder #forma form table #email:focus, #contact #contactHolder #forma form table #message:focus {
-    box-shadow: 0px 0px 8px 1px #18181e;
+    -webkit-box-shadow: 0px 0px 8px 1px #18181e;
+            box-shadow: 0px 0px 8px 1px #18181e;
   }
   #contact #contactHolder #forma form table #submit:hover {
     background-color: #18181e;
@@ -808,9 +970,15 @@ footer p {
     width: 100%;
   }
   #information #infoHolder #social ul {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    flex-direction: row;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   #information #infoHolder #social ul li {
     border-top: none;
@@ -819,7 +987,8 @@ footer p {
   }
   #information #infoHolder #social ul li:hover {
     width: 44px;
-    box-shadow: 0px 0px 8px 1px #b98d72;
+    -webkit-box-shadow: 0px 0px 8px 1px #b98d72;
+            box-shadow: 0px 0px 8px 1px #b98d72;
   }
 }
 
@@ -831,13 +1000,17 @@ footer p {
     width: 80%;
   }
   #skillsetList #skillsetHolder {
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   #skillsetList #skillsetHolder .card {
     width: 45%;
   }
   #services #servicesHolder {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: 0 auto;
     width: 90%;
   }
@@ -852,11 +1025,21 @@ footer p {
     padding: 10px 0px;
   }
   #contact #personal ul li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: center;
-    align-items: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: center;
+        flex-wrap: center;
+    -webkit-box-align: nowrap;
+        -ms-flex-align: nowrap;
+            align-items: nowrap;
     font-size: 14px;
   }
   #contact #personal ul li a i {
@@ -867,11 +1050,21 @@ footer p {
     font-size: 16px;
   }
   footer #footerLinks ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   footer #footerLinks ul li {
     padding: 3px;
@@ -888,6 +1081,14 @@ footer p {
   p, input, textarea {
     font-size: 16px;
   }
+  @-webkit-keyframes typing-520 {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 50%;
+    }
+  }
   @keyframes typing-520 {
     from {
       width: 0%;
@@ -901,12 +1102,15 @@ footer p {
     left: 0;
     bottom: 0;
     width: 100%;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: justify;
     padding: 10px 0px;
   }
   #welcome #welcomeNote h1 {
-    animation: typing-520 2s steps(30);
+    -webkit-animation: typing-520 2s steps(30);
+            animation: typing-520 2s steps(30);
   }
   #welcome #welcomeNote p {
     font-size: 13px;
@@ -936,3 +1140,4 @@ footer p {
     font-size: 30px;
   }
 }
+/*# sourceMappingURL=style.css.map */
