@@ -31,7 +31,7 @@ h1 {
 h2 {
   font-size: 32px;
   padding: 40px 0px;
-  margin: 1px auto;
+  /*margin:1px auto;*/
 }
 
 h3 {
@@ -132,6 +132,14 @@ a:hover {
   }
 }
 
+/*@keyframes spin_animation{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}*/
 /* HEADER */
 header {
   height: 100vh;
@@ -248,10 +256,11 @@ header #welcomeNote h1 {
 
 #projects #projectsList .projectsItem {
   width: 23%;
+  margin: 20px 0px;
 }
 
 #projects #projectsList .projectsItem a img {
-  width: 100%;
+  max-width: 100%;
   border-radius: 5px;
   opacity: 0.8;
 }
@@ -263,11 +272,11 @@ header #welcomeNote h1 {
 }
 
 #projects #projectsList .projectsItem h3 {
-  margin: 25px 0px 5px 0px;
+  padding-top: 10px;
 }
 
 #projects #projectsList .projectsItem p {
-  margin-bottom: 50px;
+  padding: 10px 0px;
 }
 
 #projects #projectsList .projectsItem p span {
@@ -386,6 +395,53 @@ header #welcomeNote h1 {
   text-transform: uppercase;
 }
 
+#servicesHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: center;
+  align-items: wrap;
+  position: relative;
+  padding: 20px 0px;
+  /*#bridge{
+            width:100%;
+            height:60px;
+            position:absolute;
+            top:40%;
+            background-color: $bg_color;
+            z-index: -1;
+            border-top:2px solid $color1;
+            border-bottom:2px solid $color1;
+        }*/
+  /*.fa-cog{
+            font-size:120px;
+            position: absolute;
+            top:30%;
+            animation: spin_animation 30s infinite;
+        }*/
+}
+
+#servicesHolder .service {
+  width: 45%;
+  padding: 30px 0px;
+  background-color: #18181e;
+  border-radius: 10px;
+}
+
+#servicesHolder .service i {
+  font-size: 30px;
+}
+
+#servicesHolder .service h3 {
+  padding: 20px 0px;
+  color: #ffffff;
+}
+
+#servicesHolder .service p {
+  padding: 5px;
+  color: #b98d72;
+}
+
 /*ABOUT*/
 #about {
   box-shadow: 0px 8px 8px #a8a9ad;
@@ -441,7 +497,7 @@ header #welcomeNote h1 {
 
 #about #education #eduHolder .edu {
   width: 45%;
-  padding: 20px 0px;
+  margin: 20px 0px;
 }
 
 #about #education #eduHolder .edu img {
@@ -656,7 +712,7 @@ footer p {
 }
 
 /*RESPONSIVE*/
-/* from 320 to 1920*/
+/* from 320 to 1920 */
 @media screen and (max-width: 1280px) {
   #projects #projectsList {
     justify-content: space-around;
@@ -780,6 +836,15 @@ footer p {
   #skillsetList #skillsetHolder .card {
     width: 45%;
   }
+  #services #servicesHolder {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+  }
+  #services #servicesHolder .service {
+    width: 100%;
+    margin-bottom: 10px;
+  }
   #contact #personal ul {
     width: 100%;
   }
@@ -832,7 +897,7 @@ footer p {
     }
   }
   #welcome #welcomeNote {
-    background-color: rgba(24, 24, 30, 0.9);
+    background-color: rgba(24, 24, 30, 0.8);
     left: 0;
     bottom: 0;
     width: 100%;

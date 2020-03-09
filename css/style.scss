@@ -3,7 +3,7 @@
     $color4:#ffffff;
     $color6:#a8a9ad;
     $bg_color:#18181e;
-    $bg_opacity:rgba(24, 24, 30, 0.9);
+    $bg_opacity:rgba(24, 24, 30, 0.8);
     $gradient1:linear-gradient(90deg, #b98d72 30%,#d7c797 60%, #dec79b 90%);
     $gradient2:linear-gradient(90deg, #d7c797 20%,#dec79b 40%, #b98d72 60%);
 
@@ -37,7 +37,7 @@ h1{
 h2{
     font-size: 32px;
     padding:40px 0px;
-    margin:1px auto;
+   /*margin:1px auto;*/
 }
 h3{
     font-size: 24px;
@@ -158,6 +158,14 @@ a{
     0%{@include gradient1;}
     100%{@include gradient2;}
 }
+/*@keyframes spin_animation{
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}*/
 
 /* HEADER */
 
@@ -264,8 +272,9 @@ header{
         @include a90;
         .projectsItem {
             width:23%;
+            margin: 20px 0px;
             a img {
-                width: 100%;
+                max-width: 100%;
                 border-radius: 5px;
                 opacity:0.8;
                 &:hover {
@@ -275,10 +284,10 @@ header{
                 }
             }
             h3 {
-                margin: 25px 0px 5px 0px;
+                padding-top:10px;
             }
             p {
-                margin-bottom: 50px;
+                padding:10px 0px;
                 & span{
                     text-transform: uppercase;
                 }
@@ -384,7 +393,46 @@ header{
         }
     }
 }
-
+#services{
+    &Holder{
+        @include flex(row, space-evenly, center, wrap);
+        position:relative;
+        padding:20px 0px;
+        .service{
+            width:45%;
+            padding:30px 0px;
+            background-color: $bg_color;
+            border-radius: 10px;
+            i{
+                font-size:30px;
+            }
+            h3{
+                padding:20px 0px;
+                color:$color4;
+            }
+            p{
+                padding:5px;
+                color: $color1;
+            }
+        }
+        /*#bridge{
+            width:100%;
+            height:60px;
+            position:absolute;
+            top:40%;
+            background-color: $bg_color;
+            z-index: -1;
+            border-top:2px solid $color1;
+            border-bottom:2px solid $color1;
+        }*/
+        /*.fa-cog{
+            font-size:120px;
+            position: absolute;
+            top:30%;
+            animation: spin_animation 30s infinite;
+        }*/
+    }
+}
 /*ABOUT*/
 
 #about{
@@ -425,7 +473,7 @@ header{
             @include a90;
             .edu{
                 width:45%;
-                padding:20px 0px;
+                margin:20px 0px;
                 img{
                     width:60px;
                     border-top: 3px solid $color1;
@@ -586,7 +634,7 @@ footer{
 }
 
 /*RESPONSIVE*/
-/* from 320 to 1920*/
+/* from 320 to 1920 */
 
 @media screen and (max-width:1280px){
     #projects{
@@ -736,6 +784,18 @@ footer{
             }
         }    
     }
+    #services{
+        #servicesHolder{
+            flex-direction: column;
+            @include a90;
+            .service{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    
     #contact #personal{
         ul{
             width:100%;
