@@ -1,5 +1,6 @@
     $color1:#b98d72;
     $color2:#dec79b;
+    /*$color3:#b9975b;*/
     $color4:#ffffff;
     $color6:#a8a9ad;
     $bg_color:#18181e;
@@ -395,13 +396,13 @@ header{
 }
 #services{
     &Holder{
-        @include flex(row, space-evenly, center, wrap);
-        position:relative;
+        @include a90;
+        @include flex(row, space-between, center, wrap);
         padding:20px 0px;
         .service{
-            width:45%;
+            width:47%;
             padding:30px 0px;
-            background-color: $bg_color;
+            background: $bg_color;
             border-radius: 10px;
             i{
                 font-size:30px;
@@ -476,14 +477,14 @@ header{
                 margin:20px 0px;
                 img{
                     width:60px;
-                    border-top: 3px solid $color1;
-                    border-radius:10px;
+                    border-top: 2px solid $color1;
+                    border-radius:5px;
                     padding-top:10px;
                 }
                 p{
-                    border-bottom:1px solid $color1;
+                    border-bottom:2px solid $color1;
+                    border-radius:5px;
                     padding-bottom:10px;
-                    border-radius:10px;
                 }
             }
         }    
@@ -498,7 +499,7 @@ header{
         #social{
             position:absolute;
             left:0;
-            bottom:350px;
+            bottom:400px;
             width:0px;
             height:0px;
             z-index: 2;

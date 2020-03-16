@@ -1,3 +1,4 @@
+/*$color3:#b9975b;*/
 /*@font-face{
     font-family: 'Signika', sans-serif;
     src: url("../assets/fonts/signika/Signika-Regular.ttf") format("truetype");
@@ -494,6 +495,8 @@ header #welcomeNote h1 {
 }
 
 #servicesHolder {
+  margin: 0 auto;
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -501,15 +504,14 @@ header #welcomeNote h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: center;
       flex-wrap: center;
   -webkit-box-align: wrap;
       -ms-flex-align: wrap;
           align-items: wrap;
-  position: relative;
   padding: 20px 0px;
   /*#bridge{
             width:100%;
@@ -530,9 +532,9 @@ header #welcomeNote h1 {
 }
 
 #servicesHolder .service {
-  width: 45%;
+  width: 47%;
   padding: 30px 0px;
-  background-color: #18181e;
+  background: #18181e;
   border-radius: 10px;
 }
 
@@ -613,15 +615,15 @@ header #welcomeNote h1 {
 
 #about #education #eduHolder .edu img {
   width: 60px;
-  border-top: 3px solid #b98d72;
-  border-radius: 10px;
+  border-top: 2px solid #b98d72;
+  border-radius: 5px;
   padding-top: 10px;
 }
 
 #about #education #eduHolder .edu p {
-  border-bottom: 1px solid #b98d72;
+  border-bottom: 2px solid #b98d72;
+  border-radius: 5px;
   padding-bottom: 10px;
-  border-radius: 10px;
 }
 
 /*INFORMATION*/
@@ -632,7 +634,7 @@ header #welcomeNote h1 {
 #information #infoHolder #social {
   position: absolute;
   left: 0;
-  bottom: 350px;
+  bottom: 400px;
   width: 0px;
   height: 0px;
   z-index: 2;
